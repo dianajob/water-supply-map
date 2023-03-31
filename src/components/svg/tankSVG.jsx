@@ -2,7 +2,7 @@ import L from 'leaflet';
 
 // const waterLevel = 80;
 
-export const tankSVG = waterLevel => {
+export const tankSVG = (waterLevel, prevWaterLevel) => {
   const tankString = `data:image/svg+xml;utf-8, \
       <svg viewBox="0 0 150 200" x="0px" y="0px" xmlns="http://www.w3.org/2000/svg"> \
       <g fill="rgb(178, 178, 178)"> \
@@ -13,7 +13,9 @@ export const tankSVG = waterLevel => {
           <path d="M11.5,37l0.2,4.3c0,0.6,0.3,1.1,0.6,1.1h39.2h39.2c0.3,0,0.6-0.5,0.6-1.1l0.2-4.3l0.1-4c0-0.7-0.2-1.2-0.6-1.2H51.4H11.9c-0.3,0-0.6,0.6-0.6,1.2L11.5,37z"/> \
         </g> \
         <rect fill="blue" width="8" height="20" x="46.6" y="189.11"/> \
-        <rect class="water" fill="black" width="67.5" height="${waterLevel}" x="17.7" y="42.45"/> \
+        <rect class="water" fill="black" width="67.5" height="${waterLevel}" x="17.7" y="42.45"> \
+          <animate attributeName="height" from="${prevWaterLevel}" to="${waterLevel}" dur="0.5s" fill="freeze" /> \
+        </rect> \
         <text x="25" y="100" font-family="Verdana" font-size="20" fill="white">${
           100 - waterLevel
         }%</text> \      

@@ -1,7 +1,7 @@
 {
   "name": "water-supply-map",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://dianajob.github.io/water-supply-map",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
