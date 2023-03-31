@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/water-supply-map/static/css/main.b90fc0be.css",
-    "main.js": "/water-supply-map/static/js/main.9f4bd054.js",
-    "static/media/tankfull.svg": "/water-supply-map/static/media/tankfull.5b768c1be1ff9ed17ec15ed4feb8927c.svg",
+    "main.js": "/water-supply-map/static/js/main.7e9a8f33.js",
     "index.html": "/water-supply-map/index.html",
     "main.b90fc0be.css.map": "/water-supply-map/static/css/main.b90fc0be.css.map",
-    "main.9f4bd054.js.map": "/water-supply-map/static/js/main.9f4bd054.js.map"
+    "main.7e9a8f33.js.map": "/water-supply-map/static/js/main.7e9a8f33.js.map"
   },
   "entrypoints": [
     "static/css/main.b90fc0be.css",
-    "static/js/main.9f4bd054.js"
+    "static/js/main.7e9a8f33.js"
   ]
 }
