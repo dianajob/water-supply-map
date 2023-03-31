@@ -1,0 +1,76 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.642408, -8.645743]
+      },
+      "properties": {
+        "category": "tank",
+        "id": 1,
+        "value": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.641147, -8.642258]
+      },
+      "properties": {
+        "category": "tank",
+        "id": 2,
+        "value": 30
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.639421, -8.650774]
+      },
+      "properties": {
+        "category": "tank",
+        "id": 3,
+        "value": 90
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.635657, -8.655663]
+      },
+      "properties": {
+        "category": "tank",
+        "id": 3,
+        "value": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [40.641147, -8.642258],
+          [40.642408, -8.645743],
+          [40.639421, -8.650774],
+          [40.635657, -8.655663]
+        ]
+      },
+      "properties": {
+        "category": "pipe",
+        "id": 1,
+        "diameter": 150,
+        "length": 8.288971
+      }
+    }
+  ]
+}
