@@ -11,7 +11,8 @@
       "properties": {
         "category": "tank",
         "id": 1,
-        "value": 0
+        "value": 0,
+        "pump": [0, 1, 0]
       }
     },
     {
@@ -24,7 +25,8 @@
       "properties": {
         "category": "tank",
         "id": 2,
-        "value": 30
+        "value": 30,
+        "pump": []
       }
     },
     {
@@ -37,20 +39,8 @@
       "properties": {
         "category": "tank",
         "id": 3,
-        "value": 90
-      }
-    },
-    {
-      "type": "Feature",
-      "id": 2,
-      "geometry": {
-        "type": "Point",
-        "coordinates": [40.635657, -8.655663]
-      },
-      "properties": {
-        "category": "tank",
-        "id": 3,
-        "value": 0
+        "value": 90,
+        "pump": [0, 0]
       }
     },
     {
@@ -63,7 +53,8 @@
       "properties": {
         "category": "tank",
         "id": 4,
-        "value": 0
+        "value": 0,
+        "pump": [1, 1, 1, 1]
       }
     },
     {

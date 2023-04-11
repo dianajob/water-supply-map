@@ -11,7 +11,8 @@
       "properties": {
         "category": "tank",
         "id": 1,
-        "value": 80
+        "value": 80,
+        "pump": [0, 0, 1]
       }
     },
     {
@@ -24,7 +25,8 @@
       "properties": {
         "category": "tank",
         "id": 2,
-        "value": 50
+        "value": 50,
+        "pump": []
       }
     },
     {
@@ -37,7 +39,8 @@
       "properties": {
         "category": "tank",
         "id": 3,
-        "value": 10
+        "value": 10,
+        "pump": [0, 1]
       }
     },
     {
@@ -50,7 +53,8 @@
       "properties": {
         "category": "tank",
         "id": 4,
-        "value": 0
+        "value": 0,
+        "pump": [0, 1, 1, 0]
       }
     },
     {
