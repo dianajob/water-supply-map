@@ -2,32 +2,74 @@
   filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
 } */
 
+/* //////////____POPUP_____///////////////// */
+.pump-popup {
+  top: -5px !important;
+}
+.consumption-popup {
+  top: 150px !important;
+}
+.consumption-popup:before {
+  content: '';
+  position: absolute;
+  border: 13px solid transparent;
+  border-bottom-color: white;
+  bottom: 0px;
+  margin-left: -9px !important;
+}
+/* .leaflet-popup-content-wrapper {
+  border: 2px solid #555;
+}
+.leaflet-popup-content {
+  padding: 10px !important;
+} */
+/* I moved the "tip" to the right location, but don't succeed in making it visible. */
+.leaflet-popup-tip-container {
+  top: 0px !important;
+  overflow: auto important!;
+}
+.leaflet-popup-tip {
+  box-shadow: none !important;
+  background-clip: none !important;
+}
+.leaflet-popup:before {
+  content: '';
+  position: absolute;
+  border: 13px solid transparent;
+  border-bottom-color: white;
+  bottom: 0px;
+  margin-left: -13px;
+}
+/* //////////____POPUP_____///////////////// */
+
+/* .leaflet-tooltip {
+  padding: 3px !important;
+} */
+.pump-tooltip {
+  background-color: rgb(230, 229, 229) !important;
+  border-color: rgb(29, 165, 24) !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  padding: 2px !important;
+}
+.pump-tooltip:before {
+  border-left-color: rgb(7, 117, 24) !important;
+}
+
 .water-flow {
-  animation: 50s linear infinite Flow;
+  animation: 25s linear infinite Flow;
   stroke-width: 3px;
   stroke: #aacff9;
   stroke-opacity: 1;
   stroke-dasharray: 1 100;
   stroke-linecap: round;
-  /* stroke-dashoffset: 100; */
+  stroke-dashoffset: 1000;
   /* transition: stroke-dashoffset infinite ease; */
-}
-.water-flow::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  background: lime;
 }
 
 @keyframes Flow {
   to {
-    stroke-dashoffset: 1000;
+    stroke-dashoffset: 0;
   }
   /*  0% {
     stroke-dashoffset: 100;
@@ -42,14 +84,66 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.2;
+  padding: 0 !important;
 }
-.tank-tooltip span {
+.tank-tooltip_title {
   font-size: 12px;
-  font-family: 500;
+  font-weight: 700;
+  display: block;
+  background: rgba(178, 178, 178, 0.3);
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+  color: rgb(96, 150, 180);
 }
 .tank-tooltip-water-level {
   font-size: 18px;
   font-weight: 700;
+}
+.tank-tooltip_level {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.tank-tooltip_max-min {
+  color: rgb(77, 77, 77);
+  font-weight: 700;
+  padding: 2px;
+}
+.tank-tooltip_number {
+  background: rgb(77, 77, 77);
+  color: #fff;
+  font-weight: 700;
+  padding: 2px 4px;
+  background: rgb(96, 150, 180);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.hyphen {
+  width: 10px;
+  height: 2px;
+  background: rgb(178, 178, 178);
+  border-radius: 3px;
+  margin-top: 8.5px;
+}
+.tank-tooltip_number_unit {
+  font-size: 10px;
+  font-weight: 500;
+}
+.consumption-tooltip {
+  padding: 0 !important;
+}
+.consumption-tooltip_title {
+  font-size: 10px;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 3px !important;
+  background: rgb(249, 248, 248);
+  color: rgb(77, 77, 77);
 }
 
 .switch-mode-btn {
@@ -67,54 +161,6 @@
 .switch-mode-btn img {
   height: 50px;
   width: 50px;
-}
-
-/* tank div icon styles */
-.tank-icon-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
-  width: auto;
-  height: auto;
-}
-.tank-top {
-  width: 25px;
-  height: 5px;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  background-color: #a8a4a4;
-}
-.water-container {
-  width: 20px;
-  height: 30px;
-  margin: 1px 0px 1px 2px;
-  border-left: 1px solid #a8a4a4;
-  border-right: 1px solid #a8a4a4;
-  background-color: #222;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-}
-.water {
-  width: 100%;
-  background-color: #38f;
-  transition: height 2s ease-in-out;
-}
-.water-level {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 8px;
-}
-
-.tank-bottom {
-  width: 25px;
-  height: 5px;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  background-color: #a8a4a4;
 }
 
 /* required styles */

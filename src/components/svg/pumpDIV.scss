@@ -1,0 +1,124 @@
+.pump-icon-container {
+  .pump-station {
+    border-radius: 10px;
+    padding: 3px 3px 0 3px;
+    background: rgb(230, 229, 229);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pumps-container {
+      display: flex;
+      gap: 5px;
+      .pump {
+        width: 15px;
+        min-width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid rgb(178, 178, 178);
+        text-align: center;
+        color: #fff;
+        font-size: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .pump-station-flow {
+      //margin-top: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+      text-align: center;
+      span {
+        font-size: 8px;
+      }
+    }
+    .pump-popup {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      background: rgb(249, 248, 248);
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      border: 2px solid #555;
+      border-radius: 5px;
+      padding: 10px;
+      white-space: nowrap;
+      &.open {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      }
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 8px solid #555;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin-top: -8px;
+        //box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  .pump-pipe {
+    margin: 0 auto;
+    margin-top: -1px;
+    width: 5px;
+    min-height: 10px;
+    border: 1px solid rgb(178, 178, 178);
+    background: rgb(8, 94, 141);
+  }
+  .pump-node {
+    margin: 0 auto;
+    margin-top: -1px;
+    width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgb(178, 178, 178);
+    background: rgb(8, 94, 141);
+  }
+  /* .pump-station:hover {
+  scale: 1.5;
+} */
+}
+
+.pump-popup {
+  .pump-popup_station {
+    margin-bottom: 10px;
+  }
+  &_title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &_unit {
+    font-size: 10px;
+  }
+  &_number {
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid rgb(178, 178, 178);
+    background: rgb(178, 178, 178);
+    text-align: center;
+    color: #fff;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  &_single-pump {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+}

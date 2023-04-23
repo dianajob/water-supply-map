@@ -11,8 +11,101 @@
       "properties": {
         "category": "tank",
         "id": 1,
-        "value": 0,
-        "pump": [0, 1, 0]
+        "value": 80,
+        "pump": [
+          {
+            "id": "e6644122-5482-4a4b-bcf8-4fe452b841",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "41f8cc17-0004-49c9-b0fc-63a4a84f8e",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "f426f4e3-f683-41d5-9bf5-1741228e055e",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+            "class_type": "Pump",
+            "power": 38,
+            "sensors": [
+              {
+                "id": "05ee6a13-7692-4b2e-b363-d616de6e6e138",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "6907368d-1310-448e-af0d-c9d149e06e2f",
+                "structure": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "78965b76-1797-46e0-bd51-34c634b08d43",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "1269ec07-831c-42f9-b9af-f40b0380df27",
+                "structure": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                },
+                "name": "ETA Passauna STB3EETPASCCON",
+                "description": "",
+                "notes": ""
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -25,8 +118,130 @@
       "properties": {
         "category": "tank",
         "id": 2,
-        "value": 30,
-        "pump": []
+        "value": 50,
+        "pump": [
+          {
+            "id": "e6644122-5482-4a4b-bcf8-4fe452b841",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "41f8cc17-0004-49c9-b0fc-63a4a84f8e",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "f426f4e3-f683-41d5-9bf5-1741228e055e",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+            "class_type": "Pump",
+            "power": 38,
+            "sensors": [
+              {
+                "id": "05ee6a13-7692-4b2e-b363-d616de6e6e138",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "6907368d-1310-448e-af0d-c9d149e06e2f",
+                "structure": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "78965b76-1797-46e0-bd51-34c634b08d43",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "1269ec07-831c-42f9-b9af-f40b0380df27",
+                "structure": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                },
+                "name": "ETA Passauna STB3EETPASCCON",
+                "description": "",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "255ae3ef-d4e0-45e7-90e1-8bc729f127fc",
+            "class_type": "Pump",
+            "power": 0,
+            "sensors": [
+              {
+                "id": "c3841a56-52b9-484d-b326-4c244467cfe1",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "f30d8169-c550-48fb-82db-1116e46b711",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -39,8 +254,101 @@
       "properties": {
         "category": "tank",
         "id": 3,
-        "value": 90,
-        "pump": [0, 0]
+        "value": 10,
+        "pump": [
+          {
+            "id": "e6644122-5482-4a4b-bcf8-4fe452b841",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "41f8cc17-0004-49c9-b0fc-63a4a84f8e",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "f426f4e3-f683-41d5-9bf5-1741228e055e",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+            "class_type": "Pump",
+            "power": 0,
+            "sensors": [
+              {
+                "id": "05ee6a13-7692-4b2e-b363-d616de6e6e138",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "6907368d-1310-448e-af0d-c9d149e06e2f",
+                "structure": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "78965b76-1797-46e0-bd51-34c634b08d43",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "1269ec07-831c-42f9-b9af-f40b0380df27",
+                "structure": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                },
+                "name": "ETA Passauna STB3EETPASCCON",
+                "description": "",
+                "notes": ""
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -54,7 +362,100 @@
         "category": "tank",
         "id": 4,
         "value": 0,
-        "pump": [1, 1, 1, 1]
+        "pump": [
+          {
+            "id": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+            "class_type": "Pump",
+            "power": 38,
+            "sensors": [
+              {
+                "id": "05ee6a13-7692-4b2e-b363-d616de6e6e138",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "6907368d-1310-448e-af0d-c9d149e06e2f",
+                "structure": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          },
+          {
+            "id": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "78965b76-1797-46e0-bd51-34c634b08d43",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "1269ec07-831c-42f9-b9af-f40b0380df27",
+                "structure": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                },
+                "name": "ETA Passauna STB3EETPASCCON",
+                "description": "",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "255ae3ef-d4e0-45e7-90e1-8bc729f127fc",
+            "class_type": "Pump",
+            "power": 40,
+            "sensors": [
+              {
+                "id": "c3841a56-52b9-484d-b326-4c244467cfe1",
+                "measurement": {
+                  "id": 4,
+                  "name": "current",
+                  "unit_long_pretty": "ampere",
+                  "unit_short_pretty": "A",
+                  "unit_short": "A",
+                  "type": "current"
+                }
+              },
+              {
+                "id": "f30d8169-c550-48fb-82db-1116e46b711",
+                "measurement": {
+                  "id": 2,
+                  "name": "frequency",
+                  "unit_long_pretty": "Hertz",
+                  "unit_short_pretty": "Hz",
+                  "unit_short": "Hz",
+                  "type": "frequency"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -65,9 +466,8 @@
         "coordinates": [40.628415, -8.644215]
       },
       "properties": {
-        "category": "two-tanks",
-        "id": 5,
-        "value": [100, 0]
+        "category": "ConsumptionPoint",
+        "id": 5
       }
     },
     {
@@ -79,6 +479,8 @@
           [40.641147, -8.642258],
           [40.642408, -8.645743],
           [40.639421, -8.650774],
+          [40.635657, -8.655663],
+          [40.641147, -8.642258],
           [40.628415, -8.644215]
         ]
       },
