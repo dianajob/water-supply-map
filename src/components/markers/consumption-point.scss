@@ -1,0 +1,26 @@
+.consumption-popup {
+  .consumption-popup_measurement {
+    margin-top: 15px;
+    th {
+      padding: 2px 10px;
+    }
+    tr:nth-child(odd) {
+      background-color: #f4f4f4;
+    }
+    td {
+      padding: 2px 10px;
+    }
+  }
+  &_title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  &_unit {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,136 @@
+.marker-cluster-custom {
+  .cluster-container {
+    width: 100%;
+    height: 100%;
+    background: rgba(178, 178, 178, 1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid rgb(96, 150, 180);
+    box-shadow: 8px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    .subsystem-name {
+      width: 100%;
+      text-align: center;
+      background: rgb(96, 150, 180);
+      color: rgb(223, 227, 228);
+      font-size: 10px;
+    }
+    .subsystem-devices {
+      padding: 2px;
+      display: flex;
+      gap: 3px;
+      .tank {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(172, 171, 171);
+        border-radius: 3px;
+        padding: 3px;
+        margin-bottom: 5px;
+        .tank-cells-container {
+          width: 100%;
+          display: flex;
+          gap: 3px;
+          .tank-cell-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .tank-cell {
+              width: 10px;
+              height: 50px;
+              border: 1.5px solid #d3d0d0;
+              border-radius: 5px;
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .tank-cell-water-level {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgb(49, 111, 145);
+              }
+            }
+            .water-number {
+              position: relative;
+              color: #0f0f0f;
+              font-size: 10px;
+              font-weight: 700;
+              line-height: 1;
+              margin-top: 3px;
+              text-align: center;
+              z-index: 1;
+              .unit {
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 1;
+              }
+            }
+          }
+        }
+      }
+      .consumption {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        margin-bottom: 3px;
+        .type {
+          font-weight: 700;
+          color: rgb(230, 229, 229);
+          background: rgb(211, 209, 209);
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+        .flow {
+          font-weight: 700;
+          margin-left: 5px;
+          .unit {
+            font-weight: 500;
+          }
+        }
+      }
+      .pump-station-container {
+        border-radius: 5px;
+        padding: 2px;
+        background: rgb(230, 229, 229);
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        .pumps-container {
+          display: flex;
+          gap: 1.5px;
+          margin-right: 5px;
+          .pump {
+            width: 8px;
+            min-width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+        }
+        .flow {
+          font-size: 10px;
+          font-weight: 700;
+          white-space: nowrap;
+          text-align: center;
+          line-height: 1;
+          .unit {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}
