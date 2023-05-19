@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/water-supply-map/static/css/main.e3bc5f25.css",
-    "main.js": "/water-supply-map/static/js/main.ad8f0be8.js",
+    "main.css": "/water-supply-map/static/css/main.55546ff2.css",
+    "main.js": "/water-supply-map/static/js/main.7a83518f.js",
     "static/media/light-map.jpg": "/water-supply-map/static/media/light-map.3e7c6650653f052bcb65.jpg",
     "static/media/dark-map.jpg": "/water-supply-map/static/media/dark-map.ff42512788819e24e62d.jpg",
     "static/media/tap-small.svg": "/water-supply-map/static/media/tap-small.5ef164349d046db2132059b9034837bc.svg",
+    "static/media/spinner.svg": "/water-supply-map/static/media/spinner.1a73b8c5a04c60f87164.svg",
     "index.html": "/water-supply-map/index.html",
-    "main.e3bc5f25.css.map": "/water-supply-map/static/css/main.e3bc5f25.css.map",
-    "main.ad8f0be8.js.map": "/water-supply-map/static/js/main.ad8f0be8.js.map"
+    "main.55546ff2.css.map": "/water-supply-map/static/css/main.55546ff2.css.map",
+    "main.7a83518f.js.map": "/water-supply-map/static/js/main.7a83518f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3bc5f25.css",
-    "static/js/main.ad8f0be8.js"
+    "static/css/main.55546ff2.css",
+    "static/js/main.7a83518f.js"
   ]
 }
