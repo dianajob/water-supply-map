@@ -1,9 +1,9 @@
 import L from 'leaflet';
 import { getValue } from '../../utils/sensors';
 
-export const monitoringPointSVG = sensors => {
+export const monitoringPointSVG = (sensors, sensorsValues) => {
   const flow = sensors.find(s => s.measurement.name === 'flow');
-  const value = flow ? getValue(flow.id) : 0;
+  const value = flow ? sensorsValues?.[flow.id].y : 0;
   const flowSplit = String(value).split('').reverse();
   const flowLength = flowSplit.length;
 

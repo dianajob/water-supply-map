@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { findSensor } from '../../utils/sensors';
 import { newPumpCoord } from '../../utils/shift-coordinates';
 
-export const Pipes = ({ pipes, subpipes }) => {
+export const Pipes = ({ pipes, subpipes, sensorsValues }) => {
   const pipeOptions = status => ({
     color: status ? '#085e8d' : 'rgb(77, 77, 77)',
     weight: 3
@@ -42,23 +42,24 @@ export const Pipes = ({ pipes, subpipes }) => {
     return startPos;
   };
 
+  const checkPipeIsOn = (start, end) => {
+    if (start.type.toLowerCase() === 'tank') {
+      return end.sensorslist.filter(s => sensorsValues?.[s].y > 0).length > 0;
+    }
+    return start.sensorslist.filter(s => sensorsValues?.[s].y > 0).length > 0;
+  };
+
   const pipesShifted = pipes.map(p => ({
     startnode: returnPosition(p.startnode),
     endnode: returnPosition(p.endnode),
-    isOn: p.isOn
+    isOn: checkPipeIsOn(p.startnode, p.endnode)
   }));
-
-  /* const checkPipeIsOn = (start, end) => {
-    if(start.type.toLowerCase() === 'tank'){
-      findSensor()
-    }
-  } */
 
   return zoom > 13 ? (
     <div className='pipe-container'>
       {pipesShifted.length > 0 &&
-        pipesShifted.map(pipe => (
-          <LayerGroup>
+        pipesShifted.map((pipe, i) => (
+          <LayerGroup key={'pipe' + i}>
             <Polyline pathOptions={pipeBorderOptions} positions={[pipe.startnode, pipe.endnode]} />
             <Polyline
               pathOptions={{
@@ -68,10 +69,7 @@ export const Pipes = ({ pipes, subpipes }) => {
               positions={[pipe.startnode, pipe.endnode]}
             />
             {pipe.isOn && (
-              <Polyline
-                className='water-flow'
-                positions={[pipe.startnode.latlong, pipe.endnode.latlong]}
-              />
+              <Polyline className='water-flow' positions={[pipe.startnode, pipe.endnode]} />
             )}
           </LayerGroup>
         ))}

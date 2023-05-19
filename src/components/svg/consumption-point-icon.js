@@ -1,9 +1,9 @@
 import L from 'leaflet';
 import { getValue } from '../../utils/sensors';
 
-export const consumptionSVG = sensors => {
+export const consumptionSVG = (sensors, sensorsValues) => {
   const flow = sensors.find(s => s.name === 'flow');
-  const value = flow ? getValue(flow.id) : 0;
+  const value = flow ? sensorsValues?.[flow.id].y : 0;
 
   const tankString = `data:image/svg+xml;utf-8, 
     <svg viewBox="0 0 150 200" x="0px" y="0px" xmlns="http://www.w3.org/2000/svg">

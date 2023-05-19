@@ -3,13 +3,13 @@ import { findSensor } from '../../utils/sensors';
 
 import './pump-icon.scss';
 
-export const pumpStIcon = (pumps, pumpStSensor) => {
+export const pumpStIcon = (pumps, pumpStSensor, sensorsValue) => {
   const isSomePumpOn =
-    pumps?.filter(p => p.sensors?.filter(s => findSensor(s.id).value > 0).length > 0).length > 0;
+    pumps?.filter(p => p.sensors?.filter(s => sensorsValue?.[s.id].y > 0).length > 0).length > 0;
 
   const isPumpStOn =
     (pumpStSensor?.length > 0 &&
-      pumpStSensor?.filter(s => findSensor(s.id).value > 0).length > 0) ||
+      pumpStSensor?.filter(s => sensorsValue?.[s.id].y > 0).length > 0) ||
     isSomePumpOn;
 
   const iconSizeX = pumps.length * 25 - 10;
@@ -23,7 +23,7 @@ export const pumpStIcon = (pumps, pumpStSensor) => {
     pumps.map(
       (p, i) =>
         `<div class='pump' style='background-color: ${
-          p.sensors.filter(s => findSensor(s.id).value > 0).length > 0
+          p.sensors.filter(s => sensorsValue?.[s.id].y > 0).length > 0
             ? 'rgb(98, 143, 101)'
             : 'rgb(130, 0, 0)'
         }'>${i + 1}</div>`
@@ -43,7 +43,7 @@ export const pumpStIcon = (pumps, pumpStSensor) => {
   }'>
   <div class='pumps-container'>${allCircles}</div>
   <div class='pump-station-flow'>${
-    pumpStFlow.length > 0 ? findSensor(pumpStFlow[0].id).value : ''
+    pumpStFlow.length > 0 ? sensorsValue?.[pumpStFlow[0].id].y : ''
   } <span class='unit'>${pumpStSensor?.map(s =>
     s.measurement?.type === 'flow' ? s.measurement?.unit_short : ''
   )}</span></div>

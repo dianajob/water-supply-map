@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import { consumptionSVG } from '../svg/consumption-point-icon';
-import { findSensor, getValue } from '../../utils/sensors';
 
 import './consumption-point.scss';
 
-export const ConsumptionPoint = ({ consPoint }) => {
+export const ConsumptionPoint = ({ consPoint, sensorsValues }) => {
   /* const initialSensorsList = consPoint.sensors.map(s => ({
     id: s.id,
     value: 0,
@@ -16,16 +14,16 @@ export const ConsumptionPoint = ({ consPoint }) => {
   const [sensorsList, setSensorsList] = useState(initialSensorsList);
 
   useEffect(() => {
-    if (consPoint.sensors.filter(s => sensors.find(v => v.id === s.id)).length > 0) {
-      setSensorsList(prev => prev.map(s => ({ ...s, value: getValue(s.id, sensors) })));
+    if (sensorsList.filter(s => apiSensors[s.id].value !== s.value).length > 0) {
+      setSensorsList(prev => prev.map(s => ({ ...s, value: updatedSensors[s.id].value })));
     }
-  }, [sensors, consPoint]); */
+  }, [apiSensors, consPoint]); */
 
   return (
     <div className='consumption-container'>
       <Marker
         position={consPoint.latlong}
-        icon={consumptionSVG(consPoint.sensors)}
+        icon={consumptionSVG(consPoint.sensors, sensorsValues)}
         riseOnHover={true}
         className={'consumption-point'}
       >
@@ -40,10 +38,10 @@ export const ConsumptionPoint = ({ consPoint }) => {
             {consPoint.sensors.length > 0 ? (
               <table>
                 {consPoint.sensors.map(s => (
-                  <tr>
+                  <tr key={s.id}>
                     <th>{s.measurement.name}</th>
                     <td>
-                      {getValue(s.id)}{' '}
+                      {sensorsValues?.[s.id].y}{' '}
                       <span className='consumption-popup_unit'>
                         {s.measurement.unit_short_pretty}
                       </span>

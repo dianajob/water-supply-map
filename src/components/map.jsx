@@ -1,17 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LeafletContainer } from './leaflet/leaflet';
+import { Loading } from './global/loader/loading';
+import { convertData } from '../utils/convert-data';
 
 import dataJSON from '../data/response_locations_sanepar.json';
 
 import './map.scss';
 
 export const Map = () => {
-  const [data, setData] = useState(dataJSON);
-  //api call for data
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      //setIsLoading(true);
+      try {
+        //const response = await fetch(/* `${API_BASE_URL}/data` */);
+        const systemsArray = convertData(dataJSON.systems);
+        setData(systemsArray);
+      } catch (error) {
+        // error handler
+      }
+      //setIsLoading(false);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className='map-container'>
-      <LeafletContainer systems={data.systems} />
+      {isLoading ? <Loading /> : <LeafletContainer data={data} />}
     </div>
   );
 };

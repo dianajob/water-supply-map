@@ -1,0 +1,33 @@
+@use '../styles/mixins/flex';
+@use '../styles/mixins/animation';
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.overlay {
+  @include flex.flex(row, center, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(54, 54, 54, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.spinner {
+  @include animation.setAnimation(rotation, 2s, infinite, linear);
+  background: url('../../../assets/images/spinner.svg') no-repeat 50% 50% / contain;
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 70px;
+  z-index: 11;
+}

@@ -6,27 +6,37 @@ import { MonitoringPoint } from '../markers/monitoring-point';
 import { PumpingStation } from './pumping-station';
 import { Tank } from '../markers/tank-marker';
 
-export const Subsystem = ({ subsystem }) => {
+export const Subsystem = ({ subsystem, sensorsValues, name }) => {
   return (
     <MarkerClusterGroup
       spiderfyOnMaxZoom={false}
       disableClusteringAtZoom={14}
       maxClusterRadius={200}
       onClick={e => console.log('cluster-click', e.layer.getAllChildMarkers(), e, e.layer)}
-      iconCreateFunction={cluster => createClusterCustomIcon(cluster, subsystem)}
+      iconCreateFunction={cluster => createClusterCustomIcon(cluster, subsystem, sensorsValues)}
     >
       <LayerGroup>
-        {subsystem.tanks.map(infrastructure => (
-          <Tank tank={infrastructure} pumpList={subsystem.pumpSt} />
+        {subsystem.tanks.map(t => (
+          <Tank
+            tank={t}
+            pumpList={subsystem.pumpSt}
+            sensorsValues={sensorsValues}
+            key={'tank' + t.id}
+          />
         ))}
-        {subsystem.pumpSt.map((infrastructure, i) => (
-          <PumpingStation pumpSt={infrastructure} index={i} />
+        {subsystem.pumpSt.map((p, i) => (
+          <PumpingStation
+            pumpSt={p}
+            index={i}
+            sensorsValues={sensorsValues}
+            key={'pumpst' + p.id}
+          />
         ))}
-        {subsystem.consP.map(infrastructure => (
-          <ConsumptionPoint consPoint={infrastructure} />
+        {subsystem.consP.map(c => (
+          <ConsumptionPoint consPoint={c} sensorsValues={sensorsValues} key={'cons' + c.id} />
         ))}
-        {subsystem.monP.map(infrastructure => (
-          <MonitoringPoint monPoint={infrastructure} />
+        {subsystem.monP.map(m => (
+          <MonitoringPoint monPoint={m} sensorsValues={sensorsValues} key={'mon' + m.id} />
         ))}
       </LayerGroup>
     </MarkerClusterGroup>

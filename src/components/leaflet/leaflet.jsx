@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { System } from '../system/system';
+import { SystemsContainer } from '../system/systems-container';
 
 import darkmap from './../../assets/images/dark-map.jpg';
 import lightmap from '../../assets/images/light-map.jpg';
@@ -13,7 +13,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 import 'leaflet.markercluster/dist/leaflet.markercluster-src.js'; */
 
-export const LeafletContainer = ({ systems }) => {
+export const LeafletContainer = ({ data }) => {
   const [isBasemapLight, setIsBasemapLight] = useState(true);
 
   const basemap = {
@@ -56,9 +56,7 @@ const zoomLevelHandler = useMapEvent('zoom', e => {
           />
         </button>
 
-        {systems.map(s => (
-          <System system={s} />
-        ))}
+        <SystemsContainer data={data} />
       </MapContainer>
     </div>
   );

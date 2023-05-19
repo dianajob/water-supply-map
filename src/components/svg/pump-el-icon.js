@@ -3,18 +3,19 @@ import { findSensor } from '../../utils/sensors';
 
 import './pump-el-icon.scss';
 
-export const pumpStElevationIcon = (pumps, pumpStSensor) => {
+export const pumpStElevationIcon = (pumps, pumpStSensor, sensorsValues) => {
   const isSomePumpOn =
-    pumps?.filter(p => p.sensors?.filter(s => findSensor(s.id).value > 0).length > 0).length > 0;
+    pumps?.filter(p => p.sensors?.filter(s => sensorsValues?.[s.id].y > 0).length > 0).length > 0;
 
   const isPumpStOn =
-    (pumpStSensor.length > 0 && pumpStSensor?.filter(s => findSensor(s.id).value > 0).length > 0) ||
+    (pumpStSensor.length > 0 &&
+      pumpStSensor?.filter(s => sensorsValues?.[s.id].y > 0).length > 0) ||
     isSomePumpOn;
 
   const iconSizeX = pumps.length * 25 + 22;
   const iconSizeY = 46;
 
-  const pumpStFlow = pumpStSensor?.filter(item => item.measurement?.type === 'flow');
+  const pumpStFlow = pumpStSensor?.find(item => item.measurement?.type === 'flow');
 
   /*item === 0 ? 'rgb(114, 113, 113)' : 'rgb(54, 117, 159)' 'rgb(130, 0, 0)' : 'rgb(78, 108, 80)'*/
 
@@ -23,7 +24,7 @@ export const pumpStElevationIcon = (pumps, pumpStSensor) => {
     pumps.map(
       (item, i) =>
         `<div class='pump' style='background-color: ${
-          item.sensors.filter(s => findSensor(s.id).value > 0).length > 0
+          item.sensors.filter(s => sensorsValues?.[s.id].y > 0).length > 0
             ? 'rgb(98, 143, 101)'
             : 'rgb(130, 0, 0)'
         }'>${i + 1}</div>`
@@ -44,10 +45,8 @@ export const pumpStElevationIcon = (pumps, pumpStSensor) => {
     }'>
       <div class='pumps-container'>${allCircles}</div>
       <div class='pump-station-flow'>${
-        pumpStFlow.length > 0 ? findSensor(pumpStFlow[0].id).value : ''
-      } <span class='unit'>${
-    pumpStFlow.length > 0 ? pumpStFlow[0].measurement?.unit_short : ''
-  }</span></div>
+        pumpStFlow ? sensorsValues?.[pumpStFlow.id].y : ''
+      } <span class='unit'>${pumpStFlow ? pumpStFlow.measurement?.unit_short : ''}</span></div>
     </div>
   </div>`;
 

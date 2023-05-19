@@ -3,7 +3,7 @@ import { pumpStElevationIcon } from '../svg/pump-el-icon';
 
 import { findSensor } from '../../utils/sensors';
 
-export const PumpStElevationMarker = ({ position, pumpSt }) => {
+export const PumpStElevationMarker = ({ position, pumpSt, sensorsValues }) => {
   const iconSizeX = (pumpSt.devices.length * 25 - 10) / 2 + 18;
   const popupAncorX = (pumpSt.devices.length * 25 - 10) / 2 + 18;
   const pumpStFlow = pumpSt.sensors?.filter(item => item.measurement.type === 'flow');
@@ -11,7 +11,7 @@ export const PumpStElevationMarker = ({ position, pumpSt }) => {
   return (
     <Marker
       position={position}
-      icon={pumpStElevationIcon(pumpSt.devices, pumpSt.sensors)}
+      icon={pumpStElevationIcon(pumpSt.devices, pumpSt.sensors, sensorsValues)}
       riseOnHover={true}
       className={'pump'}
     >
@@ -31,10 +31,10 @@ export const PumpStElevationMarker = ({ position, pumpSt }) => {
           {pumpSt.sensors?.length > 0 ? (
             <table>
               {pumpSt.sensors.map(s => (
-                <tr>
+                <tr key={s.id}>
                   <th>{s.measurement.name}</th>
                   <td>
-                    {findSensor(s.id).value}{' '}
+                    {sensorsValues?.[s.id].y}{' '}
                     <span className='pump-popup_unit'>{s.measurement.unit_short_pretty}</span>
                   </td>
                 </tr>
@@ -47,12 +47,12 @@ export const PumpStElevationMarker = ({ position, pumpSt }) => {
         <div className='pump-popup_pumps'>
           <span className='pump-popup_title'>Pumps:</span>
           {pumpSt.devices?.map((p, i) => (
-            <div className='pump-popup_single-pump'>
+            <div className='pump-popup_single-pump' key={p.id}>
               <div
                 className='pump-popup_number'
                 style={{
                   'background-color': `${
-                    p.sensors?.filter(s => findSensor(s.id).value > 0).length > 0
+                    p.sensors?.filter(s => sensorsValues?.[s.id].y > 0).length > 0
                       ? 'rgb(98, 143, 101)'
                       : 'rgb(130, 0, 0)'
                   }`
@@ -62,10 +62,10 @@ export const PumpStElevationMarker = ({ position, pumpSt }) => {
               </div>
               <table>
                 {p.sensors?.map(s => (
-                  <tr>
+                  <tr key={s.id}>
                     <th>{s.measurement.name}</th>
                     <td>
-                      {findSensor(s.id).value}{' '}
+                      {sensorsValues?.[s.id].y}{' '}
                       <span className='pump-popup_unit'>{s.measurement.unit_short_pretty}</span>
                     </td>
                   </tr>

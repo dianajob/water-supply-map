@@ -1,24 +1,15 @@
 import L from 'leaflet';
 import tap from '../../assets/images/tap-small.svg';
-import { findSensor } from '../../utils/sensors';
 
 import './cluster-icon.scss';
 
-export function createClusterCustomIcon(cluster, subsystem) {
-  const childMarkers = cluster.getAllChildMarkers();
-  const tankChildMarkers = childMarkers.filter(item => item.options.className.includes('tank'));
-  const pumpChildMarkers = childMarkers.filter(item => item.options.className.includes('pump'));
-  const consumptionChildMarkers = childMarkers.filter(item =>
-    item.options.className.includes('consumption-point')
-  );
-  const pumps = [0, 1, 1];
-
+export function createClusterCustomIcon(cluster, subsystem, sensorsValue) {
   const pumpStStatus = (sensors, pumps) => {
     const isSomePumpOn =
-      pumps?.filter(p => p.sensors?.filter(s => findSensor(s.id).value > 0).length > 0).length > 0;
+      pumps?.filter(p => p.sensors?.filter(s => sensorsValue[s.id]?.y > 0).length > 0).length > 0;
 
     const isPumpStOn =
-      (sensors?.length > 0 && sensors?.filter(s => findSensor(s.id).value > 0).length > 0) ||
+      (sensors?.length > 0 && sensors?.filter(s => sensorsValue[s.id]?.y > 0).length > 0) ||
       isSomePumpOn;
     return isPumpStOn;
   };
@@ -32,13 +23,13 @@ export function createClusterCustomIcon(cluster, subsystem) {
                 `<div class='tank-cell-wrapper'>
                   <div class='tank-cell'>
                     <div class='tank-cell-water-level' style='height: ${
-                      (findSensor(d.sensors.find(s => s.measurement.type === 'level').id).value /
+                      (sensorsValue[d.sensors.find(s => s.measurement.type === 'level').id]?.y /
                         5) *
                       100
                     }%'></div>
                   </div>
                   <div class='water-number'>${
-                    findSensor(d.sensors.find(s => s.measurement.type === 'level').id).value
+                    sensorsValue[d.sensors.find(s => s.measurement.type === 'level').id]?.y
                   } <span class='unit'>${
                   d.sensors?.find(s => s.measurement?.type === 'level')
                     ? d.sensors.find(s => s.measurement.type === 'level').measurement
@@ -60,14 +51,14 @@ export function createClusterCustomIcon(cluster, subsystem) {
       <div class='pumps-container'>${p.devices.map(
         (d, i) =>
           `<div class='pump' style='background-color: ${
-            d.sensors.filter(s => findSensor(s.id).value > 0).length > 0
+            d.sensors.filter(s => sensorsValue[s.id].y > 0).length > 0
               ? 'rgb(98, 143, 101)'
               : 'rgb(130, 0, 0)'
           }'></div>`
       )}</div>
       <span class='flow'>${
         p.sensors?.find(s => s.measurement?.type === 'flow')
-          ? findSensor(p.sensors.find(s => s.measurement.type === 'flow').id).value
+          ? sensorsValue[p.sensors.find(s => s.measurement.type === 'flow').id].y
           : ''
       } <span class='unit'>${
       p.sensors?.find(s => s.measurement?.type === 'flow')
@@ -84,7 +75,7 @@ export function createClusterCustomIcon(cluster, subsystem) {
           <span class='type'><img src='${tap}'></img></span>
           <span class='flow'>${
             cons.sensors.find(s => s.measurement?.type === 'flow')
-              ? findSensor(cons.sensors.find(s => s.measurement.type === 'flow').id).value
+              ? sensorsValue[cons.sensors.find(s => s.measurement.type === 'flow').id].y
               : ''
           } <span class='unit'>${
       cons.sensors?.find(s => s.measurement?.type === 'flow')

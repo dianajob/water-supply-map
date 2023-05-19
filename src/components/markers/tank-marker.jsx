@@ -2,22 +2,43 @@ import { Marker, Tooltip } from 'react-leaflet';
 import { tankSVG } from '../svg/tankSVG';
 
 import './tank.scss';
+import { useEffect, useState } from 'react';
 
-export const Tank = ({ tank }) => {
+export const Tank = ({ tank, sensorsValues }) => {
   const tooltipOffsetX = 0;
   const tooltipOffsetY = -92;
+
+  /* const cells = tank.devices.map(d => {
+    const sensorLevelID = d.sensors.find(s => s.measurement.type === 'level').id;
+    return {
+      sensorLevelID,
+      value: sensorsValues?.[sensorLevelID].y,
+      prevValue: 0
+    };
+  });
+
+  const [cellsList, setCellsList] = useState(cells);
+
+  useEffect(() => {
+    setCellsList(prev =>
+      prev.map(p => {
+        const sensorLevelID = p.sensorLevelID;
+        const prevValue = p.value;
+        return {
+          sensorLevelID,
+          value: sensorsValues?.[sensorLevelID].y,
+          prevValue
+        };
+      })
+    );
+  }, [sensorsValues]);
+
+  console.log('cells: ', cells, cellsList); */
 
   return (
     <Marker
       position={tank.latlong}
-      icon={tankSVG(tank.devices, tank.maximum_level, tank.minimum_level)}
-      className={'tank' + tank.id}
-      key={tank.id}
-      eventHandlers={{
-        click: () => {
-          console.log('marker clicked');
-        }
-      }}
+      icon={tankSVG(tank.devices, tank.maximum_level, tank.minimum_level, sensorsValues)}
     >
       <Tooltip
         permanent={true}
