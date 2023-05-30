@@ -1,0 +1,1895 @@
+{
+  "systems": [
+    {
+      "id": "19481049-6292-461a-ae52-cb7883ff0883",
+      "identifier": "passauna",
+      "name": "Passaúna",
+      "pretty_abbreviation": "Pass.",
+      "organization": "7aef9833-ce14-44a2-8385-a7155e597117",
+      "subsystems": [
+        {
+          "id": "f4352e36-c3e0-4a01-9642-7281a8c452e4",
+          "identifier": "etapassauna",
+          "name": "ETA Passaúna",
+          "pretty_abbreviation": "ETAPass",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "da17829f-e22f-4992-b12b-97e1177d74d5",
+              "name": "Pontos de Consumo (ETA Passaúna)",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "32a76154-13a3-46c3-aaac-33eb9c0d5d4f",
+                  "name": "Ponto de Consumo ETA Passaúna 3",
+                  "node": {
+                    "uuid": "14697c6a-3632-41e4-8597-108f684bfcdc",
+                    "name": "pipe start-pumpSt",
+                    "latitude": -25.498593,
+                    "longitude": -49.340614,
+                    "next_connections": [
+                      {
+                        "uuid": "34cd925b-f146-47e5-ae44-2019bd920810",
+                        "name": "node connect 2",
+                        "latitude": -25.515267,
+                        "longitude": -49.359862,
+                        "next_connections": [
+                          {
+                            "uuid": "32a0bbaa-b9aa-4a96-a0e9-83db3b2bf5ce",
+                            "name": "node connect 3",
+                            "latitude": -25.503261,
+                            "longitude": -49.362412,
+                            "next_connections": [
+                              {
+                                "uuid": "32a0bbaa-b9aa-4a96-a0e9-83db3b2bf5ce",
+                                "name": "pipe end- consP",
+                                "latitude": -25.503261,
+                                "longitude": -49.362412,
+                                "next_connections": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "d5bdd225-74d2-45b0-bdfb-6ce53dda625c",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "428f1dae-561c-4404-9631-e70f14a50845",
+                  "name": "Ponto de Consumo ETA Passaúna 10",
+                  "node": {
+                    "uuid": "c21d5da2-17be-4bc3-9c53-fa818e220065",
+                    "name": "pontodeconsumoetapassauna10",
+                    "latitude": -25.50457,
+                    "longitude": -49.357532,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "5864eb11-1523-4748-b497-93a0bcb0f41c",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "258e85de-e698-49f7-aafd-1e25090b457a",
+                  "name": "Ponto de Consumo ETA Passaúna 13",
+                  "node": {
+                    "uuid": "3cc23f25-bc69-4284-9f4d-91a33a64fe17",
+                    "name": "pontodeconsumoetapassauna13",
+                    "latitude": -25.514067,
+                    "longitude": -49.350862,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "706572e7-c97f-4e6a-bcff-a1f15677c8d8",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "8e24d625-b119-4276-8444-c6242ce45598",
+              "name": "Elevação Passaúna - Campo Comprido",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "f7917c48-4b32-4eb8-a711-74884002892a",
+                "name": "elevacaopassaunacampocomprido",
+                "latitude": -25.512765,
+                "longitude": -49.368729,
+                "next_connections": ["47e3f1de-c61a-48c3-8d31-fb3224d18763"]
+              },
+              "pumps": [
+                {
+                  "id": "c4c81be3-9706-4921-86ef-b6b99b4f4c31",
+                  "name": "B Passaúna - Campo Compido 3",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "78965b76-1797-46e0-bd51-34c637b08d43",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "1269ec07-831c-42f9-b9af-f40b0380df27",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "255ae3ef-d4e0-45e7-90e1-8bc729f127fc",
+                  "name": "B Passaúna - Campo Compido 4",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "c3841a56-52b9-484d-b326-4c249467cfe1",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "f30d8169-c550-48fb-82db-10716e46b711",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "e6644122-5482-4a4b-bcf8-4febf252b841",
+                  "name": "B Passaúna - Campo Compido 1",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "41f8cc17-0004-49c9-b0fc-63a4a8250f8e",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "f426f4e3-f683-41d5-9bf5-1761228e055e",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "900c30f7-9eae-490c-ac2b-348fbfa2fa4c",
+                  "name": "B Passaúna - Campo Compido 2",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "05ee6a13-7692-4b2e-b363-d66de6e6e138",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "6907368d-1310-448e-af0d-c9d149e06e2f",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": [
+                {
+                  "id": "334abbb8-78cc-4ac6-b563-323871edb2e2",
+                  "measurement": {
+                    "name": "flow",
+                    "type": "flow",
+                    "unit_short_pretty": "L/s"
+                  }
+                },
+                {
+                  "id": "80c600a8-d6df-401b-b43f-668ee4f17017",
+                  "measurement": {
+                    "name": "pressure",
+                    "type": "pressure",
+                    "unit_short_pretty": "mH2O"
+                  }
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "9ff72c74-524d-4916-8811-9ecea78c5485",
+          "identifier": "campocomprido",
+          "name": "Campo Comprido",
+          "pretty_abbreviation": "CComp",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "f84db5bf-ffc8-4b49-bf3d-587f8849c14b",
+              "name": "Gravidade Campo Comprido",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "be241e64-1565-43e1-adb3-ebe3608b7323",
+                  "name": "Ponto de Consumo Gravítico Campo Comprido",
+                  "node": {
+                    "uuid": "6fefcdf5-eedc-42cc-9238-b8254d32f9be",
+                    "name": "pontoconsumograviticocampocomprido",
+                    "latitude": -25.453865,
+                    "longitude": -49.333833,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "7c16d1ad-d4e8-4d97-a1de-7e3ecf6fdbdb",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7f39dace-3580-45db-92f0-cd618c842ded",
+              "name": "Recalque Campo Comprido",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "2a59c1d0-55d5-49d1-8971-8cb43b04f6cc",
+                  "name": "Ponto de Consumo Recalque Campo Comprido",
+                  "node": {
+                    "uuid": "9cb55ffb-10ab-48d2-bbb0-a589bc760490",
+                    "name": "pontodeconsumorecalquecampocomprido",
+                    "latitude": -25.444374,
+                    "longitude": -49.344269,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "84653a3a-8c9b-4281-b7ce-b3ce06a3763c",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    },
+                    {
+                      "id": "81b55da8-0fa8-4e42-9824-3a00791015e8",
+                      "measurement": {
+                        "name": "pressure",
+                        "type": "pressure",
+                        "unit_short_pretty": "mH2O"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7324c778-4116-4539-b1fb-6a54dab2aa10",
+              "name": "Reservatório Campo Comprido",
+              "class_type": "Tank",
+              "node": {
+                "uuid": "9ae5b188-2205-4537-a10a-9dccbd1cd479",
+                "name": "reservatoriocampocomprido",
+                "latitude": -25.454376,
+                "longitude": -49.3583,
+                "next_connections": [
+                  "c567780f-b1b9-420a-9c99-9c5535ef74d6",
+                  "e93e8085-9edb-43e9-bce5-be77456222f7"
+                ]
+              },
+              "upper_operational_level": 3.9,
+              "lower_operational_level": 1.7,
+              "minimum_level": 0,
+              "maximum_level": 4,
+              "tank_cells": [
+                {
+                  "id": "a03e0012-46cb-4e27-81ca-8db8cb7cd56c",
+                  "name": "Campo Comprido Cel2",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "48a2783d-85cd-4371-9a5d-4ce68145bff0",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "605ca9e9-78c4-4649-b32b-34c7b5ebb21c",
+                  "name": "Campo Comprido Cel1",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "d0bc6ad3-6388-45d4-9661-41ca61b9f440",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "250590ea-527f-48bc-b3f7-0df933ade536",
+              "name": "Elevação Campo Comprido - São Braz",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "e93e8085-9edb-43e9-bce5-be77456222f7",
+                "name": "elevacaocampocompridosaobraz",
+                "latitude": -25.454376,
+                "longitude": -49.3583,
+                "next_connections": ["47e3f1de-c61a-48c3-8d31-fb3224d18763"]
+              },
+              "pumps": [
+                {
+                  "id": "01fa58a3-c537-4551-b376-b9cff41fda7b",
+                  "name": "Campo Comprido B4",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "bdeffe07-f10c-42a7-99fa-43a3c6909001",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "da667628-2112-477c-9c48-d1c2ca093904",
+                      "measurement": {
+                        "name": "energy",
+                        "type": "energy",
+                        "unit_short_pretty": "kWh"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ec755f5c-4396-467f-9cc1-f983c73eba8a",
+                  "name": "Campo Comprido B5",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "0c124639-ef82-4298-9c7c-775a71ab672d",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": [
+                {
+                  "id": "a7eff914-c1e6-4bef-a13d-bf308cb817af",
+                  "measurement": {
+                    "name": "flow",
+                    "type": "flow",
+                    "unit_short_pretty": "L/s"
+                  }
+                },
+                {
+                  "id": "5a7ba21f-51f8-4bb0-84f0-1d875c09cba4",
+                  "measurement": {
+                    "name": "pressure",
+                    "type": "pressure",
+                    "unit_short_pretty": "mH2O"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "12d7ab1d-f214-40d8-b55f-ab373bad296c",
+              "name": "EE Recalque Campo Comprido",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "c567780f-b1b9-420a-9c99-9c5535ef74d6",
+                "name": "eerecalquecampocomprido",
+                "latitude": -25.454376,
+                "longitude": -49.3583,
+                "next_connections": []
+              },
+              "pumps": [
+                {
+                  "id": "e8ae2d40-0e73-4b9b-ac5c-f87eb53cd3bc",
+                  "name": "Campo Comprido B1",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "8706a8ba-6866-47e8-a8cb-b38dff1517df",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "811e6873-5d30-405c-b0b2-28bf5eee193a",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "52e3c4a7-d518-4b8c-b2dd-3d6b4e10e9bd",
+                  "name": "Campo Comprido B2",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "0d5c7a37-2022-46c5-b23c-d6899f8edf88",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "bd637295-0a13-4ba1-943b-6a225e8b9d6b",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "2541eb09-735e-496e-92ad-280e45cb0978",
+                  "name": "Campo Comprido B3",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "b1fa6c06-88a7-4328-97d8-c4ab852b9b9d",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "681a9552-e19c-4e8c-9308-d4b2c1094807",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "d3bf4b36-9a7f-45a2-887e-b20a84cfa95b",
+              "name": "Entrada Subsistema Campo Comprido",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "94f0f0f4-578b-4e3a-b99f-aa1f8e53de69",
+                  "name": "Entrada Subsistema Campo Comprido 1",
+                  "node": {
+                    "uuid": "ffcc72b7-4f32-49a5-926f-a0b9401b3df6",
+                    "name": "entradasubsistemacampocomprido1",
+                    "latitude": -25.482713,
+                    "longitude": -49.358196,
+                    "next_connections": ["aafb623d-039e-4a5f-83d3-6ec69d39e5e8"]
+                  },
+                  "class_type": "MonitoringPoint",
+                  "sensors": [
+                    {
+                      "id": "e2dc579a-0d5c-41e7-a200-d71d6579abdc",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "a87b0ac6-06d6-46d8-ad81-2465baba982d",
+                  "name": "Entrada Subsistema Campo Comprido 2",
+                  "node": {
+                    "uuid": "aafb623d-039e-4a5f-83d3-6ec69d39e5e8",
+                    "name": "entradasubsistemacampocomprido2",
+                    "latitude": -25.470112,
+                    "longitude": -49.358196,
+                    "next_connections": ["9ae5b188-2205-4537-a10a-9dccbd1cd479"]
+                  },
+                  "class_type": "MonitoringPoint",
+                  "sensors": [
+                    {
+                      "id": "d402a19a-84ad-4500-965b-d75a17639bd3",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "c9f7cdac-9da1-4088-82d7-5372b4cb866d",
+          "identifier": "saobraz",
+          "name": "São Bráz",
+          "pretty_abbreviation": "SãoB",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "c40b3993-e072-4696-a7a1-3621d280907f",
+              "name": "Recalque São Braz",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "1bb3d30c-630b-4398-9c5e-e3bfba0b278f",
+                  "name": "Ponto de Consumo Recalque São Braz",
+                  "node": {
+                    "uuid": "1ce79c57-3c0f-4994-81e2-1b2eb2923edd",
+                    "name": "pontodeconsumorecalquesaobraz",
+                    "latitude": -25.422702,
+                    "longitude": -49.344245,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "81b0e06d-847c-4f1a-8b03-e82b6b338ff3",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    },
+                    {
+                      "id": "3b84c76c-7dba-4351-91db-f122a161771e",
+                      "measurement": {
+                        "name": "pressure",
+                        "type": "pressure",
+                        "unit_short_pretty": "mH2O"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "692c40c8-7f0b-4c1d-a29b-15231be8cb51",
+              "name": "Gravidade São Braz",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "a3e2524a-4432-4f3a-abd8-bf58f5815bc9",
+                  "name": "Ponto de Consumo Gravítico São Braz",
+                  "node": {
+                    "uuid": "ab24c3d6-898f-4ef2-98fe-5f728cb0ff6d",
+                    "name": "pontodeconsumograviticosaobraz",
+                    "latitude": -25.413672,
+                    "longitude": -49.335894,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "01bcbadc-52a9-44ab-a4ba-6c41160ba738",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "91121053-7d63-4895-8cd6-5b549298f07e",
+              "name": "Reservatório São Braz",
+              "class_type": "Tank",
+              "node": {
+                "uuid": "90090b94-ab4c-4320-b4d1-fa5d5c30cb48",
+                "name": "reservatoriosaobraz",
+                "latitude": -25.422116,
+                "longitude": -49.365413,
+                "next_connections": [
+                  "ab24c3d6-898f-4ef2-98fe-5f728cb0ff6d",
+                  "a306b2c7-f0bb-45d4-aaea-1c0ce559bcbc",
+                  "0809b243-ee58-4daa-bc27-035d478ec235"
+                ]
+              },
+              "upper_operational_level": 4.5,
+              "lower_operational_level": 1.5,
+              "minimum_level": 0,
+              "maximum_level": 4.5,
+              "tank_cells": [
+                {
+                  "id": "eefc9460-ed0c-416e-859e-f995c27fd005",
+                  "name": "São Braz Cel2",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "3e568e8c-f5a5-4528-bc71-6263c810b5b7",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "7d6a031b-14aa-4731-a876-df2905eb48fe",
+                  "name": "São Braz Cel1",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "fad6f93c-3e1d-453a-8a52-09e954581ac6",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "fa3148b3-54a0-4ea3-b675-fa16d4982553",
+              "name": "EE Recalque São Braz",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "a306b2c7-f0bb-45d4-aaea-1c0ce559bcbc",
+                "name": "eerecalquesaobraz",
+                "latitude": -25.422116,
+                "longitude": -49.365413,
+                "next_connections": ["1ce79c57-3c0f-4994-81e2-1b2eb2923edd"]
+              },
+              "pumps": [
+                {
+                  "id": "9c10d492-73e1-4789-be1d-baf995318c98",
+                  "name": "São Braz B1",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "e473ec00-d3d5-4519-84dc-997a0c54d03d",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "9ebf7732-ebb1-4d3c-9236-c927b5144a1a",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "a9316162-ee60-42bf-8f83-11efd0a7a9fb",
+                  "name": "São Braz B2",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "b1c1ea64-d179-4b33-9480-3e8165ca7e80",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "c5669d8f-a760-4ecd-a6c0-fc7937bebc58",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "1dcad6fa-9134-41b6-8362-86e39e861c25",
+                  "name": "São Braz B3",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "b2c44c7b-3d6b-498b-b4f9-ba7ae1c1155e",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "2ce34ed2-399a-45e7-9207-7ac0c0ca7b32",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "a0ac1492-30b2-4a79-b6e7-a6e3c6991941",
+                  "name": "São Braz B4",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "260c8cbe-128f-4baf-95c6-ab96d1499b3b",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "e5b70b90-9181-4d78-a870-2a9c24abc012",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "94ee8e58-bcf2-4749-8736-d029c60daa5d",
+              "name": "Elevação São Braz - Santa Felicidade",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "0809b243-ee58-4daa-bc27-035d478ec235",
+                "name": "elevacaosaobrazsantafelicidade",
+                "latitude": -25.422116,
+                "longitude": -49.365413,
+                "next_connections": ["bebf072d-ca09-4ffe-9f68-a5713f7dcdd1"]
+              },
+              "pumps": [
+                {
+                  "id": "9aeed43d-cbb8-46bd-b5a4-d649df1b3074",
+                  "name": "São Braz B5",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "22f229c4-8453-4486-9997-9596a24fc39e",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": [
+                {
+                  "id": "4ada6593-8aa2-4efb-8cf2-cab6a884e51d",
+                  "measurement": {
+                    "name": "flow",
+                    "type": "flow",
+                    "unit_short_pretty": "L/s"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9d6367ca-278f-46e3-b141-0bc1831fcd8a",
+              "name": "Entrada Subsistema São Braz",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "4372bb35-ce48-473c-a5a3-5ce7e43d186e",
+                  "name": "Entrada Subsistema São Braz",
+                  "node": {
+                    "uuid": "47e3f1de-c61a-48c3-8d31-fb3224d18763",
+                    "name": "entradasubsistemasaobraz",
+                    "latitude": -25.437636,
+                    "longitude": -49.369695,
+                    "next_connections": ["90090b94-ab4c-4320-b4d1-fa5d5c30cb48"]
+                  },
+                  "class_type": "MonitoringPoint",
+                  "sensors": [
+                    {
+                      "id": "933a28dd-0b3b-4ad5-b427-d9c433cb22b4",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "7c03b3bb-93a1-43e9-bc1a-b87732f9b639",
+          "identifier": "santafelicidade",
+          "name": "Santa Felicidade",
+          "pretty_abbreviation": "SFelicidade",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "a9fde9c3-76e3-49bf-988b-f4bf93018085",
+              "name": "Recalque Médio Santa Felicidade",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "33b82e97-f708-422b-9964-177f7bdb44ee",
+                  "name": "Ponto de Consumo Recalque Médio Santa Felicidade",
+                  "node": {
+                    "uuid": "47a281ab-3f7a-47e2-8610-0f2b016a19ff",
+                    "name": "pontodeconsumorecalquemediosantafelicidade",
+                    "latitude": -25.402928,
+                    "longitude": -49.312073,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "bf075eb7-d496-4f60-ac48-66129c169c07",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    },
+                    {
+                      "id": "032d0ea4-4dda-4b53-80a6-99c0a9d5a641",
+                      "measurement": {
+                        "name": "pressure",
+                        "type": "pressure",
+                        "unit_short_pretty": "mH2O"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e6f91e2e-d9ee-476d-a1bd-fec56a3295e7",
+              "name": "Recalque Baixo Santa Felicidade",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "ee2b5a78-bbd4-427c-bc43-080eaebfb9e5",
+                  "name": "Ponto de Consumo Recalque Baixo Santa Felicidade",
+                  "node": {
+                    "uuid": "8737c6ca-bab9-4bbf-bd9e-38f49c1fddea",
+                    "name": "pontodeconsumorecalquebaixosantafelicidade",
+                    "latitude": -25.404355,
+                    "longitude": -49.319495,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "bcf666a6-cb60-4ffa-9711-ee55fad5ecb1",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    },
+                    {
+                      "id": "50bd1322-f6d6-4bd1-adc1-04bc90ffaaad",
+                      "measurement": {
+                        "name": "pressure",
+                        "type": "pressure",
+                        "unit_short_pretty": "mH2O"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "9b1d7b00-404d-4cff-a72b-4d5510bb4e19",
+              "name": "Reservatório Santa Felicidade",
+              "class_type": "Tank",
+              "node": {
+                "uuid": "d62456bc-e501-4793-867b-3a9ff3cbba30",
+                "name": "reservatoriosantafelicidade",
+                "latitude": -25.395944,
+                "longitude": -49.327001,
+                "next_connections": [
+                  "09037aa8-f1cd-4ddb-beeb-4b1ceb0b459b",
+                  "ae972475-f0a4-4644-a801-e96d5b729c1e",
+                  "3ca58e40-e341-4200-9bf2-cba165361c96"
+                ]
+              },
+              "upper_operational_level": 5,
+              "lower_operational_level": 1,
+              "minimum_level": 1,
+              "maximum_level": 5,
+              "tank_cells": [
+                {
+                  "id": "5848aa58-c727-4eda-aa20-1efa551a8189",
+                  "name": "Santa Felicidade Cel 2",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "405e0f09-2b6f-4135-84d9-38874bc17470",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ce3987bb-cf75-4f27-99b3-4d147cab8c24",
+                  "name": "Santa Felicidade Cel 3",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "5339b4a2-0177-4b53-8bf0-e1816beb475d",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ad15a8fe-1531-4908-b80d-0a74f869b02d",
+                  "name": "Santa Felicidade Cel 1",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "a524771a-0bb0-4003-bdab-f89a8d74ee9a",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "6d302b3e-3ea0-4182-b41d-29bc42d3158e",
+              "name": "EE Recalque Baixo Santa Felicidade",
+              "class_type": "PumpingStation",
+              "type": "boost",
+              "node": {
+                "uuid": "ae972475-f0a4-4644-a801-e96d5b729c1e",
+                "name": "eerecalquebaixosantafelicidade",
+                "latitude": -25.395944,
+                "longitude": -25.395944,
+                "next_connections": ["8737c6ca-bab9-4bbf-bd9e-38f49c1fddea"]
+              },
+              "pumps": [
+                {
+                  "id": "edd4daab-3a86-4f48-af17-d72484f8c59a",
+                  "name": "Santa Felicidade B7",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "aca6640a-2a7d-46e1-a189-d117e669d752",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "b75dcc17-4273-402e-b318-4d2ec351173b",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "f820e780-4cb6-4b4b-8021-c091c0247f4e",
+                  "name": "Santa Felicidade B8",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "6e79ae44-03be-4411-a7fc-715679d15b52",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "d61db9a1-8a26-4cb1-b89c-0bb7701603b5",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "0ef87221-37d4-43d4-aca8-b1cf31a43da9",
+                  "name": "Santa Felicidade B9",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "b5730ea2-f526-4686-a758-2cda72e774e6",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "5c6f5269-f4c5-4f20-84bb-33eee4f13263",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "65d3833a-b29d-4fc1-a145-dfa8717012ca",
+              "name": "Elevação Santa Felicidade - Butiatuvinha",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "3ca58e40-e341-4200-9bf2-cba165361c96",
+                "name": "elevacaosantafelicidadebutiatuvinha",
+                "latitude": -25.395944,
+                "longitude": -49.327001,
+                "next_connections": ["80c9c67e-ce22-420a-85e5-201c1d3dfd5e"]
+              },
+              "pumps": [
+                {
+                  "id": "6026db23-c68a-4a32-b954-b11d1273ebe3",
+                  "name": "Santa Felicidade B3",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "1ebf2f61-7954-42f9-a61d-5b4b8b727dd5",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "cab8a920-62e6-4487-bbcc-1f40b4db3955",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "b5636490-cd81-4728-8dfb-10d0939809c7",
+                  "name": "Santa Felicidade B2",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "5ca6aad5-e77d-4687-acfe-be047ccfcc0e",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "f858f70a-96f7-49a4-a92e-71f9a0d380db",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "91c3a8eb-e751-4eae-a639-b03ddd6c75a7",
+                  "name": "Santa Felicidade B1",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "6f4db9c4-07ff-4d6d-97c5-9858a7882369",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "203d5819-3af8-4d63-b0fb-b44cd2bb841d",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": [
+                {
+                  "id": "be98b6cf-c4d2-4e83-836e-ad2c826873b3",
+                  "measurement": {
+                    "name": "flow",
+                    "type": "flow",
+                    "unit_short_pretty": "L/s"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "08461045-2826-4e1c-8604-359ec4c19598",
+              "name": "EE Recalque Médio Santa Felicidade",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "09037aa8-f1cd-4ddb-beeb-4b1ceb0b459b",
+                "name": "eerecalquemediosantafelicidade",
+                "latitude": -25.395944,
+                "longitude": -25.395944,
+                "next_connections": []
+              },
+              "pumps": [
+                {
+                  "id": "36b7f7e2-f5a8-4b51-aa47-508028969e0d",
+                  "name": "Santa Felicidade B4",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "b8e36a83-93ba-4b53-b03b-e4126a421af6",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "7b583979-3eb8-4173-9986-299a46e1b46c",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "9bacc673-55f5-4160-b071-34e7d508fe45",
+                  "name": "Santa Felicidade B5",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "332ee310-65b5-43b4-88f5-0488fc755496",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "341d846a-ca73-4b56-ae70-ef185d985008",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "301be977-7719-489f-a48c-65d664c3cfb7",
+                  "name": "Santa Felicidade B6",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "0b8d6109-a7d6-4407-affd-495345ddd233",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "92e445f3-9101-4257-9141-9eed21e0e72a",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "4e4efdb1-efd5-4005-b19e-b48016c5f41f",
+              "name": "Entrada Subsistema Santa Felicidade",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "bf72839b-d9fb-4770-ad01-72e0f362233d",
+                  "name": "Entrada Subsistema Santa Felicidade",
+                  "node": {
+                    "uuid": "bebf072d-ca09-4ffe-9f68-a5713f7dcdd1",
+                    "name": "entradasubsistemasantafelicidade",
+                    "latitude": -25.406351,
+                    "longitude": -49.34347,
+                    "next_connections": ["d62456bc-e501-4793-867b-3a9ff3cbba30"]
+                  },
+                  "class_type": "MonitoringPoint",
+                  "sensors": [
+                    {
+                      "id": "b534c613-b452-4dfc-8360-ede277595d31",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "151e75df-9c29-473b-ba22-0271edbeb3c0",
+          "identifier": "butiatuvinha",
+          "name": "Butiatuvinha",
+          "pretty_abbreviation": "But",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "5ad5052b-7655-4521-8d2c-800f6a41d0ee",
+              "name": "Elevação Butiatuvinha - Lamenha Pequena",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "e492182d-aa24-43c3-a575-a78efda836cd",
+                "name": "elevacaobutiatuvinhalamenhapequena",
+                "latitude": -25.37988,
+                "longitude": -49.345303,
+                "next_connections": ["28c204fc-00a1-4cb8-9674-1f5a0a0444ce"]
+              },
+              "pumps": [
+                {
+                  "id": "4c2ea017-d324-40ea-add6-193cc6cfa993",
+                  "name": "Butiatuvinha B1",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "959327b5-4b27-4dda-a680-2981c3ddea31",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "17e607ad-f8d1-4033-8bb9-ba33f43e3dc9",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "b77c37cc-aa99-45b4-80f7-0943d8ae883b",
+                  "name": "Butiatuvinha B2",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "394a32dd-14da-4c7a-b41a-a203fdd34c72",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "3d229f37-5b7f-45dd-86a1-fc3dc1509540",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "355acbbd-666f-4a1e-acc0-5d29779f9bbd",
+                  "name": "Butiatuvinha B3",
+                  "class_type": "Pump",
+                  "has_vsd": true,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "d2298bbd-aba0-4a64-b024-f6bf48e39354",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    },
+                    {
+                      "id": "5cb51fd5-0557-4578-9293-0797b69e44ff",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": [
+                {
+                  "id": "c82ca695-bbbc-454e-a150-e8cfcb55f67b",
+                  "measurement": {
+                    "name": "flow",
+                    "type": "flow",
+                    "unit_short_pretty": "L/s"
+                  }
+                },
+                {
+                  "id": "469fda31-568d-48b8-9bf5-ae653fdf2dca",
+                  "measurement": {
+                    "name": "pressure",
+                    "type": "pressure",
+                    "unit_short_pretty": "mH2O"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "680c0f3b-f501-4b68-9293-44f329502f0e",
+              "name": "Reservatório Butiatuvinha",
+              "class_type": "Tank",
+              "node": {
+                "uuid": "80c9c67e-ce22-420a-85e5-201c1d3dfd5e",
+                "name": "reservatoriobutiatuvinha",
+                "latitude": -25.37988,
+                "longitude": -49.345303,
+                "next_connections": ["e492182d-aa24-43c3-a575-a78efda836cd"]
+              },
+              "upper_operational_level": 4.9,
+              "lower_operational_level": 1.8,
+              "minimum_level": 0,
+              "maximum_level": 5,
+              "tank_cells": [
+                {
+                  "id": "45e19ecf-5f67-4001-8581-abfcc841948d",
+                  "name": "Butiatuvinha Cel 2",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "4c4de5ea-8398-414e-916c-bcf01392841e",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "4d53423e-4a53-4bc1-bad9-653c88bf2d4b",
+                  "name": "Butiatuvinha Cel 1",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "94884575-df80-41d9-a37e-596a6ed01372",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "3bade257-404b-49b7-88ca-55ed53ce264a",
+          "identifier": "lamanhapequena",
+          "name": "Lamenha Pequena",
+          "pretty_abbreviation": "LamPeq",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "df7075cc-698c-4d11-abe7-e131ab39fa98",
+              "name": "Gravidade Lamenha Pequena",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "3d1e6dab-c41c-4b83-93c7-ca76880a9d4f",
+                  "name": "Ponto de Consumo Gravítico Lamenha Pequena",
+                  "node": {
+                    "uuid": "91bf8610-40aa-46d4-9e9e-901781a96ec4",
+                    "name": "pontodeconsumograviticolamenhapequena",
+                    "latitude": -25.370153,
+                    "longitude": -49.334122,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "54c01ec0-f6e9-4898-8d74-c59da399ccfb",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bf7197c9-b5ad-4131-9c25-c026d54feb12",
+              "name": "Recalque Lamenha Pequena",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "9308552b-fe06-4d63-9122-7dc9492ea752",
+                  "name": "Ponto de Consumo Recalque Lamenha Pequena",
+                  "node": {
+                    "uuid": "c87da6d5-99ae-45c2-9ab8-1bc130a55800",
+                    "name": "pontodeconsumorecalquelamenhapequena",
+                    "latitude": -25.36566,
+                    "longitude": -49.331874,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "c78115d5-3eaf-4374-82f1-ff49f55ca2a0",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    },
+                    {
+                      "id": "a8e52d02-2847-4865-aced-fccf5da4c076",
+                      "measurement": {
+                        "name": "pressure",
+                        "type": "pressure",
+                        "unit_short_pretty": "mH2O"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "542c3c1f-34a1-499d-aec7-bf61834534a6",
+              "name": "Reservatório Lamenha Pequena",
+              "class_type": "Tank",
+              "node": {
+                "uuid": "4c60b72c-b57e-407a-b2f8-d8acf9404eb0",
+                "name": "reservatoriolamenhapequena",
+                "latitude": -25.366906,
+                "longitude": -49.338431,
+                "next_connections": [
+                  "91bf8610-40aa-46d4-9e9e-901781a96ec4",
+                  "7de1d5d8-9b1a-4654-b0cb-9a271df6b9c5"
+                ]
+              },
+              "upper_operational_level": 5.2,
+              "lower_operational_level": 1.8,
+              "minimum_level": 0,
+              "maximum_level": 5.5,
+              "tank_cells": [
+                {
+                  "id": "f05f86bf-06ea-4c4f-bd1b-38b40e4392fd",
+                  "name": "Lamenha Pequena Cel 1",
+                  "node": null,
+                  "class_type": "TankCell",
+                  "sensors": [
+                    {
+                      "id": "a3ba0275-9c92-41fb-818e-a978d5e7abdf",
+                      "measurement": {
+                        "name": "level",
+                        "type": "level",
+                        "unit_short_pretty": "m"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "b942295b-bcf7-41c8-8a9a-75b7fc4ddf11",
+              "name": "EE Recalque Lamenha Pequena",
+              "class_type": "PumpingStation",
+              "type": "elevation",
+              "node": {
+                "uuid": "7de1d5d8-9b1a-4654-b0cb-9a271df6b9c5",
+                "name": "eerecalquelamenhapequena",
+                "latitude": -25.366906,
+                "longitude": -49.338431,
+                "next_connections": ["c87da6d5-99ae-45c2-9ab8-1bc130a55800"]
+              },
+              "pumps": [
+                {
+                  "id": "58fcba41-72c3-46a2-9886-5037332fa1b8",
+                  "name": "Lamenha Pequena B1",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "6ac69aa8-0f1b-4239-93ea-2f21f4d7fcea",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "70b934d3-de14-49fc-b615-b6de4f66a729",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "f9ec1446-2989-423c-b717-f839796e4c04",
+                  "name": "Lamenha Pequena B2",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "6dbed01e-1fb7-497a-b362-d38f805c2081",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "929c064b-5d96-40ef-b7b5-6d22289772d0",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "5642b015-d7cf-44ba-a562-ae4947166425",
+                  "name": "Lamenha Pequena B3",
+                  "class_type": "Pump",
+                  "has_vsd": false,
+                  "node": null,
+                  "sensors": [
+                    {
+                      "id": "60c68c91-ac55-4384-a9ee-40c87c7234cd",
+                      "measurement": {
+                        "name": "current",
+                        "type": "current",
+                        "unit_short_pretty": "A"
+                      }
+                    },
+                    {
+                      "id": "10aa452a-a1a3-44e3-a946-3c98fa94cd34",
+                      "measurement": {
+                        "name": "frequency",
+                        "type": "frequency",
+                        "unit_short_pretty": "Hz"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "sensors": []
+            },
+            {
+              "id": "74daa431-70be-4216-aa2b-aad71a715668",
+              "name": "Entrada Subsistema Lamenha Pequena",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "43015d1d-343f-44a8-aae7-f0e0090e4b2c",
+                  "name": "Entrada Subsistema Lamenha Pequena",
+                  "node": {
+                    "uuid": "28c204fc-00a1-4cb8-9674-1f5a0a0444ce",
+                    "name": "entradasubsistemalamenhapequena",
+                    "latitude": -25.373004,
+                    "longitude": -49.338948,
+                    "next_connections": ["4c60b72c-b57e-407a-b2f8-d8acf9404eb0"]
+                  },
+                  "class_type": "MonitoringPoint",
+                  "sensors": [
+                    {
+                      "id": "5efe4c31-e5bc-429c-b344-922fda7b93a9",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "f3eada36-aa56-43a6-9e9c-f3eded79842b",
+          "identifier": "araucariasabia",
+          "name": "Araucária Sábia",
+          "pretty_abbreviation": "asabia",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "dab897cd-06f6-40a1-9075-e548ebce6b03",
+              "name": "Pontos de Consumo (Araucaria Sabia)",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "10d8795b-3374-41ef-a2e8-e1b9a22ba2a5",
+                  "name": "Ponto de Consumo Araucaria Sabia",
+                  "node": {
+                    "uuid": "ca7feb73-1731-409d-a358-6d67d5e2451e",
+                    "name": "pontodeconsumoaraucariasabia",
+                    "latitude": -25.574417,
+                    "longitude": -49.385295,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "b00e01aa-bc9b-4328-a93b-cfce383cc38b",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        },
+        {
+          "id": "822f2e78-2937-4d7b-b6fc-39114533632f",
+          "identifier": "araucariacentro",
+          "name": "Araucária Centro",
+          "pretty_abbreviation": "acentro",
+          "system": "19481049-6292-461a-ae52-cb7883ff0883",
+          "infrastructures": [
+            {
+              "id": "7cd42ab0-d45c-466f-a88d-8417b640c6ae",
+              "name": "Pontos de Consumo (Araucaria Centro)",
+              "class_type": "Infrastructure",
+              "node": null,
+              "sensors": [],
+              "devices": [
+                {
+                  "id": "2c0da2ea-6f58-4b08-9af8-1994e12797ad",
+                  "name": "Ponto de Consumo Araucaria Centro",
+                  "node": {
+                    "uuid": "aded966c-9d4d-4376-a760-0aac9375404a",
+                    "name": "pontodeconsumoaraucariacentro",
+                    "latitude": -25.587396,
+                    "longitude": -49.405218,
+                    "next_connections": []
+                  },
+                  "class_type": "ConsumptionPoint",
+                  "sensors": [
+                    {
+                      "id": "30f8a901-5541-4471-a45d-31676701015a",
+                      "measurement": {
+                        "name": "flow",
+                        "type": "flow",
+                        "unit_short_pretty": "L/s"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "solar_parks": []
+        }
+      ]
+    }
+  ]
+}

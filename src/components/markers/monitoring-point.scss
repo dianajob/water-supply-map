@@ -1,6 +1,6 @@
-.consumption-popup {
+.monitoring-popup {
   font-size: 'Open Sans';
-  .consumption-popup_measurement {
+  &_measurement {
     margin-top: 15px;
     table {
       margin: 0 auto;
@@ -35,6 +35,6 @@
   }
 }
 
-.consumption-popup {
-  top: 4px !important;
+.monitoring-popup {
+  top: 0px !important;
 }

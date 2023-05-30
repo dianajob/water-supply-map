@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import shadow from '../../assets/images/tank-shadow.svg';
 
 export const solarSVG = () => {
   const solarString = `data:image/svg+xml;utf-8,

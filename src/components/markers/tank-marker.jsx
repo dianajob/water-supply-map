@@ -2,38 +2,10 @@ import { Marker, Tooltip } from 'react-leaflet';
 import { tankSVG } from '../svg/tankSVG';
 
 import './tank.scss';
-import { useEffect, useState } from 'react';
 
 export const Tank = ({ tank, sensorsValues }) => {
   const tooltipOffsetX = 0;
   const tooltipOffsetY = -92;
-
-  /* const cells = tank.devices.map(d => {
-    const sensorLevelID = d.sensors.find(s => s.measurement.type === 'level').id;
-    return {
-      sensorLevelID,
-      value: sensorsValues?.[sensorLevelID].y,
-      prevValue: 0
-    };
-  });
-
-  const [cellsList, setCellsList] = useState(cells);
-
-  useEffect(() => {
-    setCellsList(prev =>
-      prev.map(p => {
-        const sensorLevelID = p.sensorLevelID;
-        const prevValue = p.value;
-        return {
-          sensorLevelID,
-          value: sensorsValues?.[sensorLevelID].y,
-          prevValue
-        };
-      })
-    );
-  }, [sensorsValues]);
-
-  console.log('cells: ', cells, cellsList); */
 
   return (
     <Marker
@@ -50,13 +22,13 @@ export const Tank = ({ tank, sensorsValues }) => {
         <div className='tank-tooltip_level'>
           <span className='tank-tooltip_level_max-min'>min: </span>
           <span className='tank-tooltip_level_number'>
-            {tank.lower_operational_level}
+            {tank.lower_operational_level ? tank.lower_operational_level : ''}
             <span className='tank-tooltip_level_number_unit'> m</span>
           </span>
           <span className='tank-tooltip_level_hyphen' />
           <span className='tank-tooltip_level_max-min'>max: </span>
           <span className='tank-tooltip_level_number'>
-            {tank.upper_operational_level}
+            {tank.upper_operational_level ? tank.upper_operational_level : ''}
             <span className='tank-tooltip_level_number_unit'> m</span>
           </span>
         </div>

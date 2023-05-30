@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 import { getUpdatedSensors } from '../../utils/getUpdatedSensors';
 import { updateValues } from '../../utils/update-values';
 
-require('@changey/react-leaflet-markercluster/dist/styles.min.css');
-
 export const System = ({ system }) => {
   const [sensorsValues, setSensorsValues] = useState({ ...system.sensors });
   const [isSystemRemoved, setIsSystemRemoved] = useState(false);
@@ -16,7 +14,8 @@ export const System = ({ system }) => {
       //const response = await fetch(/* `${API_BASE_URL}`, system.sensorsID */);
       const response = getUpdatedSensors(system.sensorsID, value); // getUpdatedSensors() used for testing without api call
       const updatedValues = updateValues(sensorsValues, response);
-      setSensorsValues(updatedValues);
+      console.log(updatedValues, response);
+      setSensorsValues(prev => ({ ...updatedValues }));
     } catch (error) {
       // error handler
     }
@@ -34,7 +33,7 @@ export const System = ({ system }) => {
       }
       value = value + 1; // value used for testing without api call
       getSensorsValues(value);
-    }, 300000);
+    }, 10000);
 
     return () => {
       clearInterval(intervalCall);

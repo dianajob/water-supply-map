@@ -3,7 +3,8 @@ import { LeafletContainer } from './leaflet/leaflet';
 import { Loading } from './global/loader/loading';
 import { convertData } from '../utils/convert-data';
 
-import dataJSON from '../data/response_locations_sanepar.json';
+import dataJSONold from '../data/response_locations_sanepar.json';
+import dataJSON from '../data/network_map_sanepar.json';
 
 import './map.scss';
 
@@ -17,6 +18,7 @@ export const Map = () => {
       try {
         //const response = await fetch(/* `${API_BASE_URL}/data` */);
         const systemsArray = convertData(dataJSON.systems);
+        console.log(systemsArray);
         setData(systemsArray);
       } catch (error) {
         // error handler

@@ -1,8 +1,6 @@
 import { useMap } from 'react-leaflet';
 import { PumpStMarker } from '../markers/pump-marker';
-import { PumpStElevationMarker } from '../markers/pump-el-marker';
 import { useCallback, useEffect, useState } from 'react';
-import { pumpStSubTypeEl } from '../../constants/types';
 import { newPumpCoord } from '../../utils/shift-coordinates';
 
 export const PumpingStation = ({ pumpSt, sensorsValues }) => {
@@ -25,17 +23,5 @@ export const PumpingStation = ({ pumpSt, sensorsValues }) => {
     };
   }, [map, onZoom]);
 
-  return (
-    <div className='system-container'>
-      {pumpSt.subtype.toLowerCase() === pumpStSubTypeEl.toLowerCase() ? (
-        <PumpStElevationMarker
-          position={coordinates}
-          pumpSt={pumpSt}
-          sensorsValues={sensorsValues}
-        />
-      ) : (
-        <PumpStMarker position={coordinates} pumpSt={pumpSt} sensorsValues={sensorsValues} />
-      )}
-    </div>
-  );
+  return <PumpStMarker position={coordinates} pumpSt={pumpSt} sensorsValues={sensorsValues} />;
 };

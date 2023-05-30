@@ -1,4 +1,19 @@
+@mixin font-value {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@mixin font-unit {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+}
+
 .marker-cluster-custom {
+  width: auto !important;
+  height: auto !important;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-in;
   .cluster-container {
     width: 100%;
     height: 100%;
@@ -8,16 +23,25 @@
     border: 3px solid rgb(96, 150, 180);
     box-shadow: 8px 5px 10px 0px rgba(0, 0, 0, 0.5);
     .subsystem-name {
+      font-family: 'Open Sans', sans-serif;
       width: 100%;
       text-align: center;
       background: rgb(96, 150, 180);
       color: rgb(223, 227, 228);
       font-size: 10px;
+      white-space: nowrap;
+      padding: 0 5px;
     }
     .subsystem-devices {
       padding: 2px;
       display: flex;
       gap: 3px;
+      .tank-block,
+      .pump-st-block,
+      .cons-block,
+      .mon-block {
+        padding: 3px;
+      }
       .tank {
         width: 100%;
         display: flex;
@@ -55,17 +79,15 @@
               }
             }
             .water-number {
+              @include font-value();
               position: relative;
               color: #0f0f0f;
-              font-size: 10px;
-              font-weight: 700;
               line-height: 1;
               margin-top: 3px;
               text-align: center;
               z-index: 1;
               .unit {
-                font-size: 10px;
-                font-weight: 500;
+                @include font-unit();
                 line-height: 1;
               }
             }
@@ -79,8 +101,6 @@
         white-space: nowrap;
         margin-bottom: 3px;
         .type {
-          font-weight: 700;
-          color: rgb(230, 229, 229);
           background: rgb(211, 209, 209);
           width: 18px;
           height: 18px;
@@ -94,25 +114,58 @@
           }
         }
         .flow {
-          font-weight: 700;
+          @include font-value();
           margin-left: 5px;
           .unit {
-            font-weight: 500;
+            @include font-unit();
+            margin-left: 3px;
           }
         }
       }
+      .monitoring {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        margin-bottom: 3px;
+        .display {
+          background: rgb(77, 77, 77);
+          max-width: 40px;
+          min-width: 30px;
+          width: auto;
+          border-radius: 2px;
+          padding: 0 2px;
+          color: #fff;
+          font-size: 9px;
+          text-align: end;
+          line-height: 2;
+          letter-spacing: 1px;
+          font-family: 'CustomFontDigital';
+          .measurement-data {
+            text-align: end;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: 2px;
+            font-family: 'CustomFontDigital';
+          }
+        }
+        .unit {
+          @include font-unit();
+          margin-left: 3px;
+        }
+      }
       .pump-station-container {
-        border-radius: 5px;
-        padding: 2px;
-        background: rgb(230, 229, 229);
         position: relative;
         display: flex;
         align-items: center;
+        border-radius: 5px;
+        padding: 2px;
+        background: rgb(230, 229, 229);
         margin-bottom: 3px;
+        max-width: min-content;
         .pumps-container {
           display: flex;
           gap: 1.5px;
-          margin-right: 5px;
           .pump {
             width: 8px;
             min-width: 8px;
@@ -121,13 +174,14 @@
           }
         }
         .flow {
-          font-size: 10px;
-          font-weight: 700;
+          @include font-value();
           white-space: nowrap;
           text-align: center;
           line-height: 1;
+          margin-left: 5px;
           .unit {
-            font-size: 8px;
+            @include font-unit();
+            margin-left: 3px;
           }
         }
       }

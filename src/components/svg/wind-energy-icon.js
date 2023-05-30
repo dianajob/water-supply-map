@@ -1,7 +1,6 @@
 import L from 'leaflet';
-import shadow from '../../assets/images/tank-shadow.svg';
 
-export const windSVG = () => {
+export const windSVG = value => {
   const windString = `data:image/svg+xml;utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100" >
 <style type="text/css">
@@ -19,7 +18,9 @@ export const windSVG = () => {
 		S54.4,35.5,54.4,35.5L52.7,34.8z"/>
 	<path class="st2" d="M54.8,38.9l0.7,0.8c0,0,3.9-0.2,5.9-0.7c0,0,16.8,21.5,17.7,23.7
 		c0.5,1.2-0.4,1.4-0.9,1.2c-0.4-0.3-25.1-24-25.1-24L54.8,38.9z"/>	
-  <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 51.8 38" to="360 51.8 38" dur="2s" additive="sum" repeatCount="indefinite" />
+  <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 51.8 38" to="360 51.8 38" dur="${
+    value ? '2s' : '0s'
+  }" additive="sum" repeatCount="indefinite" />
 </g>
 <circle class="st3" cx="51.8" cy="38" r="4"/>
 <circle class="st4" cx="51.8" cy="38" r="3"/>

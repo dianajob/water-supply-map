@@ -1,6 +1,6 @@
-.consumption-popup {
+.energy-popup {
   font-size: 'Open Sans';
-  .consumption-popup_measurement {
+  &_measurement {
     margin-top: 15px;
     table {
       margin: 0 auto;
@@ -35,6 +35,24 @@
   }
 }
 
-.consumption-popup {
-  top: 4px !important;
+.energy-popup {
+  top: 10px !important;
+}
+
+.energy-tooltip {
+  font-size: 'Open Sans';
+  background: rgb(230, 229, 229) !important;
+  border-color: rgba(77, 77, 77, 1) !important;
+  &::before {
+    border-top-color: rgba(77, 77, 77, 1) !important;
+  }
+  .value {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .unit {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 3px;
+  }
 }

@@ -1,10 +1,10 @@
-import { pumpStSubTypeEl } from '../constants/types';
+import { pumpStElevation } from '../constants/types';
 
 export const newPumpCoord = (coord, type, shift, zoom) => {
-  const i = zoom > 15 ? 4 : 16;
-  const topMeters = type && type.toLowerCase() === pumpStSubTypeEl.toLowerCase() ? 0 : -15 * i;
+  const i = zoom > 14 ? Math.pow(2, 18 - zoom) : 16;
+  const topMeters = type && type.toLowerCase() === pumpStElevation ? 0 : -18 * i;
   const leftMeters =
-    type && type.toLowerCase() === pumpStSubTypeEl.toLowerCase()
+    type && type.toLowerCase() === pumpStElevation
       ? shift.tankCells * 10 * i
       : -50 * i + shift.index * 50 * i;
 
@@ -17,6 +17,7 @@ export const newPumpCoord = (coord, type, shift, zoom) => {
   const cos = Math.cos;
   const m_long = 1 / (((2 * pi) / 360) * earth) / 1000; //1 meter in degree
 
-  const new_longitude = coord[1] + (leftMeters * m_long) / cos(coord[0] * (pi / 180));
+  const new_longitude = coord[1] + (leftMeters * m_long) / (cos(coord[0] * (pi / 180)) + 1e-12);
+  console.log('inside function shif', new_latitude, new_longitude);
   return [new_latitude, new_longitude];
 };

@@ -1,5 +1,5 @@
-@use '../styles/mixins/flex';
-@use '../styles/mixins/animation';
+@use '../../../styles/mixins/common';
+@use '../../../styles/mixins/animation';
 
 @keyframes rotation {
   0% {
@@ -11,7 +11,7 @@
 }
 
 .overlay {
-  @include flex.flex(row, center, center);
+  @include common.flex(row, center, center);
   position: fixed;
   top: 0;
   left: 0;

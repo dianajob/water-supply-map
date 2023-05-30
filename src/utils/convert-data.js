@@ -2,52 +2,59 @@ import {
   consPointType,
   infrType,
   monPointType,
-  pumpStSubTypeBooster,
-  pumpStSubTypeEl,
+  pumpStBooster,
+  pumpStElevation,
   pumpStType,
   tankType
 } from '../constants/types';
 
 export const convertData = systems => {
-  const systemsConverted = [];
+  const convertedSystems = [];
 
   for (let system of systems) {
     const subsystems = [];
-    const coordinates = [];
+    const coordinatesList = [];
     const pipes = [];
     const subpipes = [];
     const sensors = {};
     const sensorsID = [];
+    const subConnections = {};
 
     for (let sub of system.subsystems) {
+      subConnections[sub.id] = [];
+
       const tanks = sub.infrastructures
-        .filter(infr => infr.class_type.toLowerCase() === tankType.toLowerCase())
+        .filter(infr => infr.class_type?.toLowerCase() === tankType)
         .map((tank, i) => {
           return {
             ...tank,
-            latlong: [tank.devices[0].xcoord, tank.devices[0].ycoord]
+            devices: tank.tank_cells,
+            minimum_level: 0,
+            maximum_level: 5,
+            latlong: [tank.node.latitude, tank.node.longitude]
           };
         });
 
       let count = 0;
       const pumpSt = sub.infrastructures
-        .filter(infr => infr.class_type.toLowerCase() === pumpStType.toLowerCase())
+        .filter(infr => infr.class_type?.toLowerCase() === pumpStType)
         .map((p, i) => {
           count =
-            p.subtype.toLowerCase() === pumpStSubTypeBooster.toLowerCase() ||
-            p.subtype.toLowerCase() === pumpStSubTypeEl.toLowerCase()
+            p.type.toLowerCase() === pumpStBooster || p.type.toLowerCase() === pumpStElevation
               ? count
               : count + 1;
 
-          const inputTank = tanks.find(t => t.output_devices.indexOf(p.id) >= 0);
+          const inputTank = tanks.find(t => t.node.next_connections.indexOf(p.node.uuid) >= 0);
 
           return {
             ...p,
+            subtype: p.type,
+            devices: p.pumps,
             shift_index: { index: count, tankCells: inputTank ? inputTank.tank_cells.length : 0 },
             latlong:
-              inputTank && p.subtype.toLowerCase() !== pumpStSubTypeBooster.toLowerCase()
+              inputTank && p.type.toLowerCase() !== pumpStBooster
                 ? inputTank.latlong
-                : [p.devices[0].xcoord, p.devices[0].ycoord]
+                : [p.node.latitude, p.node.longitude]
           };
         });
 
@@ -55,20 +62,18 @@ export const convertData = systems => {
       const monP = [];
 
       for (let infr of sub.infrastructures) {
-        if (infr.class_type.toLowerCase() === infrType.toLowerCase()) {
+        if (infr.class_type.toLowerCase() === infrType) {
           for (let dev of infr.devices) {
-            if (dev.class_type.toLowerCase() === consPointType.toLowerCase()) {
+            if (dev.class_type.toLowerCase() === consPointType) {
               consP.push({
                 ...dev,
-                subsystem: infr.subsystem,
-                latlong: [dev.xcoord, dev.ycoord]
+                latlong: [dev.node.latitude, dev.node.longitude]
               });
             }
-            if (dev.class_type.toLowerCase() === monPointType.toLowerCase()) {
+            if (dev.class_type.toLowerCase() === monPointType) {
               monP.push({
                 ...dev,
-                subsystem: infr.subsystem,
-                latlong: [dev.xcoord, dev.ycoord]
+                latlong: [dev.node.latitude, dev.node.longitude]
               });
             }
           }
@@ -76,11 +81,13 @@ export const convertData = systems => {
       }
 
       const sublatlong =
-        tanks.length > 0 ? tanks[0].latlong : pumpSt.length > 0 ? pumpSt[0].latlong : null;
-
-      if (sublatlong) {
-        subpipes.push(sublatlong);
-      }
+        tanks.length > 0
+          ? tanks[0].latlong
+          : pumpSt.length > 0
+          ? pumpSt[0].latlong
+          : consP.length > 0
+          ? consP[0].latlong
+          : null;
 
       subsystems.push({
         id: sub.id,
@@ -89,29 +96,30 @@ export const convertData = systems => {
         tanks,
         pumpSt,
         consP,
-        monP
+        monP,
+        solar_parks: sub.solar_parks
       });
     }
 
-    console.log('subsystems after loop:', subsystems); //---------------console
-
     const addCoordinate = (
       id,
+      nodeID,
       type,
+      subID,
       sensorslist,
       subtype,
       latlong,
-      subsystem,
       output_devices,
       shift_index
     ) => {
-      coordinates.push({
+      coordinatesList.push({
         id,
+        nodeID,
         type,
+        subID,
         sensorslist,
         subtype,
         latlong,
-        subsystem,
         output_devices,
         shift_index
       });
@@ -128,10 +136,6 @@ export const convertData = systems => {
     for (let sub of subsystems) {
       for (let tank of sub.tanks) {
         const sensorslist = [];
-        tank.sensors.forEach(s => {
-          addSensor(s.id);
-          sensorslist.push(s.id);
-        });
         tank.devices.forEach(d =>
           d.sensors.forEach(s => {
             addSensor(s.id);
@@ -140,12 +144,13 @@ export const convertData = systems => {
         );
         addCoordinate(
           tank.id,
+          tank.node.uuid,
           tank.class_type,
+          sub.id,
           sensorslist,
           null,
           tank.latlong,
-          tank.subsystem,
-          tank.output_devices,
+          tank.node.next_connections,
           null
         );
       }
@@ -165,12 +170,13 @@ export const convertData = systems => {
 
         addCoordinate(
           pump.id,
+          pump.node.uuid,
           pump.class_type,
+          sub.id,
           sensorslist,
           pump.subtype,
           pump.latlong,
-          pump.subsystem,
-          pump.output_devices,
+          pump.node.next_connections,
           pump.shift_index
         );
       }
@@ -184,12 +190,13 @@ export const convertData = systems => {
 
         addCoordinate(
           cons.id,
+          cons.node.uuid,
           cons.class_type,
+          sub.id,
           sensorslist,
           null,
           cons.latlong,
-          cons.subsystem,
-          cons.output_devices,
+          cons.node.next_connections,
           null
         );
       }
@@ -203,36 +210,109 @@ export const convertData = systems => {
         mon.sensors.forEach(s => addSensor(s.id));
         addCoordinate(
           mon.id,
+          mon.node.uuid,
           mon.class_type,
+          sub.id,
           sensorslist,
           null,
           mon.latlong,
-          mon.subsystem,
-          mon.output_devices,
+          mon.node.next_connections,
           null
         );
       }
+
+      for (let generator of sub.solar_parks) {
+        const sensorslist = [];
+        generator.sensors?.forEach(s => {
+          addSensor(s.id);
+          sensorslist.push(s.id);
+        });
+        generator.sensors.forEach(s => addSensor(s.id));
+      }
     }
 
-    console.log('coordinates after loop:', coordinates); //---------------console
+    function extractCoordinates(obj) {
+      let extraCoordinates = [];
+      let deepestObj = obj;
 
-    for (let el of coordinates) {
+      function findDeepest(obj) {
+        if (typeof obj === 'object') {
+          extraCoordinates.push([obj.latitude, obj.longitude]);
+        }
+        if (typeof obj === 'string') {
+          const el = coordinatesList.find(c => c.nodeID === obj);
+          extraCoordinates.push(el.latlong);
+        }
+
+        if (obj.hasOwnProperty('next_connections') && obj.next_connections.length > 0) {
+          obj.next_connections.forEach(connection => {
+            findDeepest(connection);
+          });
+        } else {
+          deepestObj = obj;
+        }
+      }
+
+      findDeepest(obj);
+      extraCoordinates.pop();
+      return { extraCoordinates, deepestObj };
+    }
+
+    for (let el of coordinatesList) {
       if (el.output_devices.length > 0) {
         for (let output of el.output_devices) {
-          let endCoord = coordinates.find(c => c.id === output);
-          pipes.push({
-            startnode: el,
-            endnode: endCoord,
-            isOn: false
-          });
+          if (typeof output === 'string') {
+            subConnections[el.subID].push(output);
+            let endCoord = coordinatesList.find(c => c.nodeID === output);
+            pipes.push({
+              startnode: el,
+              endnode: endCoord,
+              isOn: false
+            });
+          }
+          if (typeof output === 'object') {
+            const { extraCoordinates, deepestObj } = extractCoordinates(output);
+            const lastConnectionID = typeof deepestObj === 'object' ? deepestObj.uuid : deepestObj;
+            subConnections[el.subID].push(lastConnectionID);
+            let lastConnection = coordinatesList.find(c => c.nodeID === lastConnectionID);
+            pipes.push({
+              startnode: el,
+              between: extraCoordinates,
+              endnode: lastConnection,
+              isOn: false
+            });
+          }
         }
       }
     }
-    console.log('pipes:', pipes);
-    systemsConverted.push({
+
+    subsystems.forEach(s => {
+      const subSensors = coordinatesList
+        .filter(c => c.subID === s.id)
+        .flatMap(c => c.sensorslist.flat());
+
+      const subPipeStart = { latlong: s.sublatlong, sensors: subSensors };
+      const subPipeEnd = coordinatesList.filter(
+        c => subConnections[s.id].includes(c.nodeID) && c.subID !== s.id
+      );
+      subPipeEnd.forEach(p => {
+        const subsys = subsystems.find(s => s.id === p.subID);
+        const endSensors = coordinatesList
+          .filter(c => c.subID === subsys.id)
+          .flatMap(c => c.sensorslist.flat());
+
+        subpipes.push({
+          start: subPipeStart,
+          end: { latlong: subsys.sublatlong, sensors: endSensors },
+          isOn: false
+        });
+      });
+    });
+
+    convertedSystems.push({
       ...system,
       subsystems: subsystems,
-      coordinates,
+      coordinatesList,
       pipes,
       subpipes,
       sensors,
@@ -240,5 +320,5 @@ export const convertData = systems => {
     });
   }
 
-  return systemsConverted;
+  return convertedSystems;
 };

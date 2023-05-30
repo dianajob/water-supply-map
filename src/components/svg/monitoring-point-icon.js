@@ -1,9 +1,10 @@
 import L from 'leaflet';
-import { getValue } from '../../utils/sensors';
+import { flowType } from '../../constants/types';
 
 export const monitoringPointSVG = (sensors, sensorsValues) => {
-  const flow = sensors.find(s => s.measurement.name === 'flow');
-  const value = flow ? sensorsValues?.[flow.id].y : 0;
+  const flow = sensors.find(s => s.measurement.type.toLowerCase() === flowType);
+  const value = flow ? sensorsValues?.[flow.id].y : '';
+
   const flowSplit = String(value).split('').reverse();
   const flowLength = flowSplit.length;
 
@@ -21,7 +22,7 @@ export const monitoringPointSVG = (sensors, sensorsValues) => {
   </g>
    <g>
     <rect x="19" y="28.5" width="15" height="23" fill='${
-      flowSplit.length > 3 ? 'rgb(135, 20, 20)' : 'rgb(178, 178, 178)'
+      flowSplit.length > 3 ? 'rgb(159, 56, 56)' : 'rgb(178, 178, 178)'
     }' />
     <text x="26.5" y="45" text-anchor="middle" font-family="Roboto Mono" font-size="16" font-weight="700" fill="rgb(250, 251, 251)">${
       flowSplit.length > 3 ? flowSplit[3] : ''
@@ -29,7 +30,7 @@ export const monitoringPointSVG = (sensors, sensorsValues) => {
   </g>
   <g>
     <rect x="35" y="28.5" width="15" height="23" fill='${
-      flowSplit.length > 2 ? 'rgb(135, 20, 20)' : 'rgb(178, 178, 178)'
+      flowSplit.length > 2 ? 'rgb(159, 56, 56)' : 'rgb(178, 178, 178)'
     }' />
     <text x="42.5" y="45" text-anchor="middle" font-family="Ubuntu" font-size="18" font-weight="700" fill="rgb(250, 251, 251)">${
       flowSplit.length > 2 ? flowSplit[2] : ''
@@ -37,25 +38,17 @@ export const monitoringPointSVG = (sensors, sensorsValues) => {
   </g>
     <g>
     <rect x="51" y="28.5" width="15" height="23" fill='${
-      flowSplit.length > 1 ? 'rgb(135, 20, 20)' : 'rgb(178, 178, 178)'
+      flowSplit.length > 1 ? 'rgb(159, 56, 56)' : 'rgb(178, 178, 178)'
     }' />
     <text x="58.5" y="45" text-anchor="middle" font-family="Ubuntu" font-size="18" font-weight="700" fill="rgb(250, 251, 251)">${
       flowSplit.length > 1 ? flowSplit[1] : ''
     }</text>
   </g>
   <g>
-    <rect x="67" y="28.5" width="15" height="23" fill='${
-      flowSplit.length === 0 || (flowSplit.length === 1 && flowSplit[0] === '0')
-        ? 'rgb(135, 20, 20)'
-        : 'rgb(135, 20, 20)'
-    }' />
-    <text x="74.5" y="45" text-anchor="middle" font-family="Ubuntu" font-size="18" font-weight="700" fill="rgb(250, 251, 251)">${
-      flowSplit.length > 0 ? flowSplit[0] : 0
-    }</text>
+    <rect x="19" y="28.5" width="63" height="23" fill='${'rgb(0, 0, 0)'}' />
+    <text x="74.5" y="45" text-anchor="end" font-family="Ubuntu" font-size="18" font-weight="700" fill="rgb(159, 56, 56)">${value}</text>
   </g>
-  <rect x="46" y="80" fill='${
-    value > 0 ? 'rgb(8, 94, 141)' : 'rgb(77, 77, 77)'
-  }' stroke-width='1px' stroke='rgb(178, 178, 178)' width='8' height="15"/>
+  <rect x="47" y="80" fill='rgb(178, 178, 178)'  width='6' height="15"/>
   <circle fill='${
     value > 0 ? 'rgb(8, 94, 141)' : 'rgb(77, 77, 77)'
   }' stroke-width='2px' stroke='rgb(178, 178, 178)' cx="50" cy="102" r="8"/>
